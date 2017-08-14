@@ -31,6 +31,7 @@
 		084F97631F422B0C003F418F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F975E1F422B0C003F418F /* HomePresenter.swift */; };
 		084F97641F422B0C003F418F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F975F1F422B0C003F418F /* HomeViewController.swift */; };
 		084F97651F422B0C003F418F /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97601F422B0C003F418F /* HomeWireframe.swift */; };
+		084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */; };
 		08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F75DE21F3E34A20082E665 /* AppDelegate.swift */; };
 		08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE41F3E34FC0082E665 /* Assets.xcassets */; };
 		08F75DE91F3E354C0082E665 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE81F3E354C0082E665 /* Info.plist */; };
@@ -69,6 +70,7 @@
 		084F975E1F422B0C003F418F /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		084F975F1F422B0C003F418F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		084F97601F422B0C003F418F /* HomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
+		084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemConfigurable.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F75DE21F3E34A20082E665 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08F75DE41F3E34FC0082E665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 				084F97561F422AD7003F418F /* FavoritesWireframe.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		084F97661F422F1A003F418F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		086624D91F3E292700B0B16E = {
@@ -149,6 +159,7 @@
 		08F75DDF1F3E33F40082E665 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				084F97661F422F1A003F418F /* Protocols */,
 				08F75E0B1F3E3A690082E665 /* Enums */,
 				08F75E061F3E39890082E665 /* Models */,
 				08F75E051F3E397A0082E665 /* Constants */,
@@ -436,6 +447,7 @@
 				084F97641F422B0C003F418F /* HomeViewController.swift in Sources */,
 				08F75DF81F3E378E0082E665 /* WireframeInterface.swift in Sources */,
 				084F97621F422B0C003F418F /* HomeInterfaces.swift in Sources */,
+				084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */,
 				084F97631F422B0C003F418F /* HomePresenter.swift in Sources */,
 				084F97461F4227D9003F418F /* TabBarWireframe.swift in Sources */,
 				08F75DF21F3E37150082E665 /* ViewInterface.swift in Sources */,

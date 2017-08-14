@@ -41,6 +41,7 @@ final class HomeWireframe: NSObject {
         }
         
         configureModuleWithViewController(viewController: viewController)
+        viewController.configureTabBarItem()
         
         return viewController
     }

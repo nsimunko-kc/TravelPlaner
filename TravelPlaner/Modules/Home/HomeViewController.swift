@@ -35,3 +35,17 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewInterface {
 }
+
+extension HomeViewController: TabBarItemConfigurable {
+    func tabBarItemTitle() -> String {
+        return "Planovi"
+    }
+    
+    func tabBarItemDeselectedImageName() -> String {
+        return "ic_home"
+    }
+    
+    func tabBarItemSelectedImageName() -> String {
+        return "ic_home"
+    }
+}

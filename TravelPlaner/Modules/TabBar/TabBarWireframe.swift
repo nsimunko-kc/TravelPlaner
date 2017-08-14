@@ -45,6 +45,8 @@ final class TabBarWireframe: NSObject {
             fatalError("No view controller found with the following identifier: \(Constants.ViewControllerIdentifiers.TabBar)")
         }
         
+        viewController.viewControllers = _wireframes.map { $0.instantiateAndConfigureModuleWithNavigationController() }
+        
         configureModuleWithViewController(viewController: viewController)
         
         return viewController

@@ -35,3 +35,17 @@ final class FavoritesViewController: UIViewController {
 
 extension FavoritesViewController: FavoritesViewInterface {
 }
+
+extension FavoritesViewController: TabBarItemConfigurable {
+    func tabBarItemTitle() -> String {
+        return "Favoriti"
+    }
+    
+    func tabBarItemDeselectedImageName() -> String {
+        return "ic_star"
+    }
+    
+    func tabBarItemSelectedImageName() -> String {
+        return "ic_star"
+    }
+}

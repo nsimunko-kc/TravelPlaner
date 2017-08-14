@@ -41,6 +41,7 @@ final class FavoritesWireframe: NSObject {
         }
         
         configureModuleWithViewController(viewController: viewController)
+        viewController.configureTabBarItem()
         
         return viewController
     }

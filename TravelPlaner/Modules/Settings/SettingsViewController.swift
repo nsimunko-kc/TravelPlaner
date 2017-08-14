@@ -35,3 +35,17 @@ final class SettingsViewController: UIViewController {
 
 extension SettingsViewController: SettingsViewInterface {
 }
+
+extension SettingsViewController: TabBarItemConfigurable {
+    func tabBarItemTitle() -> String {
+        return "Postavke"
+    }
+    
+    func tabBarItemDeselectedImageName() -> String {
+        return "ic_settings"
+    }
+    
+    func tabBarItemSelectedImageName() -> String {
+        return "ic_settings"
+    }
+}
