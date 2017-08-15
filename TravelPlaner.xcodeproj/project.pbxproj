@@ -33,6 +33,8 @@
 		084F97651F422B0C003F418F /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97601F422B0C003F418F /* HomeWireframe.swift */; };
 		084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */; };
 		084F976B1F436987003F418F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F976A1F436987003F418F /* UIColorExtension.swift */; };
+		08BB13841F437D040041CCAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08BB13831F437D040041CCAC /* GoogleService-Info.plist */; };
+		08BB13861F437F390041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13851F437F390041CCAC /* GettyImage.swift */; };
 		08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F75DE21F3E34A20082E665 /* AppDelegate.swift */; };
 		08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE41F3E34FC0082E665 /* Assets.xcassets */; };
 		08F75DE91F3E354C0082E665 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE81F3E354C0082E665 /* Info.plist */; };
@@ -74,6 +76,8 @@
 		084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemConfigurable.swift; sourceTree = "<group>"; };
 		084F976A1F436987003F418F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08BB13831F437D040041CCAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		08BB13851F437F390041CCAC /* GettyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImage.swift; sourceTree = "<group>"; };
 		08F75DE21F3E34A20082E665 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08F75DE41F3E34FC0082E665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08F75DE81F3E354C0082E665 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				08F75DE81F3E354C0082E665 /* Info.plist */,
+				08BB13831F437D040041CCAC /* GoogleService-Info.plist */,
 			);
 			path = "Other-Sources";
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 		08F75E061F3E39890082E665 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08BB13851F437F390041CCAC /* GettyImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				084F97361F42267B003F418F /* TabBar.storyboard in Resources */,
+				08BB13841F437D040041CCAC /* GoogleService-Info.plist in Resources */,
 				08F75DE91F3E354C0082E665 /* Info.plist in Resources */,
 				08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */,
 				084F973C1F4226B2003F418F /* Settings.storyboard in Resources */,
@@ -454,6 +461,7 @@
 				08F75DF61F3E37750082E665 /* InteractorInterface.swift in Sources */,
 				084F974E1F422A95003F418F /* SettingsInterfaces.swift in Sources */,
 				084F97501F422A95003F418F /* SettingsViewController.swift in Sources */,
+				08BB13861F437F390041CCAC /* GettyImage.swift in Sources */,
 				084F97591F422AD7003F418F /* FavoritesPresenter.swift in Sources */,
 				084F97641F422B0C003F418F /* HomeViewController.swift in Sources */,
 				08F75DF81F3E378E0082E665 /* WireframeInterface.swift in Sources */,
