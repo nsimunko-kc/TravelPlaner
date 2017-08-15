@@ -24,11 +24,20 @@ final class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _configureUI()
     }
 
     // MARK: - IBActions -
 
     // MARK: - Private functions -
+    
+    fileprivate func _configureUI() {
+        navigationItem.title = "Moje postavke"
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.appLightBlue()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
 }
 
 // MARK: - Extensions -

@@ -24,11 +24,25 @@ final class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _configureUI()
     }
 
     // MARK: - IBActions -
 
     // MARK: - Private functions -
+    
+    fileprivate func _configureUI() {
+        navigationItem.title = "Moje lokacije"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_plus"), style: .plain, target: self, action: #selector(_newLocationButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.appLightBlue()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
+    
+    @objc fileprivate func _newLocationButtonTapped() {
+        
+    }
 }
 
 // MARK: - Extensions -
