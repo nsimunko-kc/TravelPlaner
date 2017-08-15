@@ -24,11 +24,25 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _configureUI()
     }
 
     // MARK: - IBActions -
 
     // MARK: - Private functions -
+    
+    fileprivate func _configureUI() {
+        navigationItem.title = "Moji planovi"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_plus"), style: .plain, target: self, action: #selector(_newPlanButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.appLightBlue()
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    }
+    
+    @objc fileprivate func _newPlanButtonTapped() {
+        
+    }
 }
 
 // MARK: - Extensions -
