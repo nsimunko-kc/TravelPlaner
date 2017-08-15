@@ -34,7 +34,11 @@
 		084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */; };
 		084F976B1F436987003F418F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F976A1F436987003F418F /* UIColorExtension.swift */; };
 		08BB13841F437D040041CCAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08BB13831F437D040041CCAC /* GoogleService-Info.plist */; };
-		08BB13861F437F390041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13851F437F390041CCAC /* GettyImage.swift */; };
+		08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB138E1F4382F20041CCAC /* GettyImage.swift */; };
+		08BB13921F4382FD0041CCAC /* OWMCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13901F4382FD0041CCAC /* OWMCity.swift */; };
+		08BB13931F4382FD0041CCAC /* OWMWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13911F4382FD0041CCAC /* OWMWeather.swift */; };
+		08BB13951F4383C10041CCAC /* OWMMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13941F4383C10041CCAC /* OWMMain.swift */; };
+		08BB13971F4385490041CCAC /* OWMWind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13961F4385490041CCAC /* OWMWind.swift */; };
 		08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F75DE21F3E34A20082E665 /* AppDelegate.swift */; };
 		08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE41F3E34FC0082E665 /* Assets.xcassets */; };
 		08F75DE91F3E354C0082E665 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE81F3E354C0082E665 /* Info.plist */; };
@@ -77,7 +81,11 @@
 		084F976A1F436987003F418F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08BB13831F437D040041CCAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		08BB13851F437F390041CCAC /* GettyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImage.swift; sourceTree = "<group>"; };
+		08BB138E1F4382F20041CCAC /* GettyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImage.swift; sourceTree = "<group>"; };
+		08BB13901F4382FD0041CCAC /* OWMCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMCity.swift; sourceTree = "<group>"; };
+		08BB13911F4382FD0041CCAC /* OWMWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMWeather.swift; sourceTree = "<group>"; };
+		08BB13941F4383C10041CCAC /* OWMMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMMain.swift; sourceTree = "<group>"; };
+		08BB13961F4385490041CCAC /* OWMWind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMWind.swift; sourceTree = "<group>"; };
 		08F75DE21F3E34A20082E665 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08F75DE41F3E34FC0082E665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08F75DE81F3E354C0082E665 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +168,32 @@
 				08F75DE11F3E34100082E665 /* Resources */,
 			);
 			path = TravelPlaner;
+			sourceTree = "<group>";
+		};
+		08BB138B1F4382C40041CCAC /* Google */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		08BB138C1F4382CC0041CCAC /* GettyImages */ = {
+			isa = PBXGroup;
+			children = (
+				08BB138E1F4382F20041CCAC /* GettyImage.swift */,
+			);
+			path = GettyImages;
+			sourceTree = "<group>";
+		};
+		08BB138D1F4382D30041CCAC /* OpenWeatherMap */ = {
+			isa = PBXGroup;
+			children = (
+				08BB13901F4382FD0041CCAC /* OWMCity.swift */,
+				08BB13911F4382FD0041CCAC /* OWMWeather.swift */,
+				08BB13941F4383C10041CCAC /* OWMMain.swift */,
+				08BB13961F4385490041CCAC /* OWMWind.swift */,
+			);
+			path = OpenWeatherMap;
 			sourceTree = "<group>";
 		};
 		08F75DDE1F3E33EC0082E665 /* Application */ = {
@@ -256,7 +290,9 @@
 		08F75E061F3E39890082E665 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				08BB13851F437F390041CCAC /* GettyImage.swift */,
+				08BB138D1F4382D30041CCAC /* OpenWeatherMap */,
+				08BB138C1F4382CC0041CCAC /* GettyImages */,
+				08BB138B1F4382C40041CCAC /* Google */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -454,6 +490,7 @@
 				084F97441F4227D9003F418F /* TabBarPresenter.swift in Sources */,
 				084F97421F4227D9003F418F /* TabBarInteractor.swift in Sources */,
 				084F97451F4227D9003F418F /* TabBarViewController.swift in Sources */,
+				08BB13951F4383C10041CCAC /* OWMMain.swift in Sources */,
 				084F97511F422A95003F418F /* SettingsWireframe.swift in Sources */,
 				084F97651F422B0C003F418F /* HomeWireframe.swift in Sources */,
 				084F97581F422AD7003F418F /* FavoritesInterfaces.swift in Sources */,
@@ -461,8 +498,10 @@
 				08F75DF61F3E37750082E665 /* InteractorInterface.swift in Sources */,
 				084F974E1F422A95003F418F /* SettingsInterfaces.swift in Sources */,
 				084F97501F422A95003F418F /* SettingsViewController.swift in Sources */,
-				08BB13861F437F390041CCAC /* GettyImage.swift in Sources */,
+				08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */,
 				084F97591F422AD7003F418F /* FavoritesPresenter.swift in Sources */,
+				08BB13921F4382FD0041CCAC /* OWMCity.swift in Sources */,
+				08BB13931F4382FD0041CCAC /* OWMWeather.swift in Sources */,
 				084F97641F422B0C003F418F /* HomeViewController.swift in Sources */,
 				08F75DF81F3E378E0082E665 /* WireframeInterface.swift in Sources */,
 				084F97621F422B0C003F418F /* HomeInterfaces.swift in Sources */,
@@ -472,6 +511,7 @@
 				08F75DF21F3E37150082E665 /* ViewInterface.swift in Sources */,
 				084F975B1F422AD7003F418F /* FavoritesWireframe.swift in Sources */,
 				084F97571F422AD7003F418F /* FavoritesInteractor.swift in Sources */,
+				08BB13971F4385490041CCAC /* OWMWind.swift in Sources */,
 				08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */,
 				084F976B1F436987003F418F /* UIColorExtension.swift in Sources */,
 				084F975A1F422AD7003F418F /* FavoritesViewController.swift in Sources */,
