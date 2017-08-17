@@ -13,6 +13,7 @@ struct Constants {
         static let Home = "Home"
         static let Favorites = "Favorites"
         static let Settings = "Settings"
+        static let Login = "Login"
     }
     
     struct ViewControllerIdentifiers {
@@ -20,6 +21,7 @@ struct Constants {
         static let Home = "HomeViewController"
         static let Favorites = "FavoritesViewController"
         static let Settings = "SettingsViewController"
+        static let Login = "LoginViewController"
     }
     
     struct URLs {

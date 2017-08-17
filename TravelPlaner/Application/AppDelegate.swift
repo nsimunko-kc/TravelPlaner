@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let wireframe: WireframeInterface = TabBarWireframe()
+        let wireframe: WireframeInterface = LoginWireframe()
         let rootViewController = wireframe.instantiateAndConfigureModule()
         
         window = UIWindow(frame: UIScreen.main.bounds)

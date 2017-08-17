@@ -39,6 +39,12 @@
 		08BB13931F4382FD0041CCAC /* OWMWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13911F4382FD0041CCAC /* OWMWeather.swift */; };
 		08BB13951F4383C10041CCAC /* OWMMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13941F4383C10041CCAC /* OWMMain.swift */; };
 		08BB13971F4385490041CCAC /* OWMWind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13961F4385490041CCAC /* OWMWind.swift */; };
+		08BB139E1F45E1990041CCAC /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13991F45E1980041CCAC /* LoginInteractor.swift */; };
+		08BB139F1F45E1990041CCAC /* LoginInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB139A1F45E1990041CCAC /* LoginInterfaces.swift */; };
+		08BB13A01F45E1990041CCAC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB139B1F45E1990041CCAC /* LoginPresenter.swift */; };
+		08BB13A11F45E1990041CCAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB139C1F45E1990041CCAC /* LoginViewController.swift */; };
+		08BB13A21F45E1990041CCAC /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB139D1F45E1990041CCAC /* LoginWireframe.swift */; };
+		08BB13A61F45E2C70041CCAC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08BB13A51F45E2C70041CCAC /* Login.storyboard */; };
 		08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F75DE21F3E34A20082E665 /* AppDelegate.swift */; };
 		08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE41F3E34FC0082E665 /* Assets.xcassets */; };
 		08F75DE91F3E354C0082E665 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE81F3E354C0082E665 /* Info.plist */; };
@@ -86,6 +92,12 @@
 		08BB13911F4382FD0041CCAC /* OWMWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMWeather.swift; sourceTree = "<group>"; };
 		08BB13941F4383C10041CCAC /* OWMMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMMain.swift; sourceTree = "<group>"; };
 		08BB13961F4385490041CCAC /* OWMWind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMWind.swift; sourceTree = "<group>"; };
+		08BB13991F45E1980041CCAC /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		08BB139A1F45E1990041CCAC /* LoginInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInterfaces.swift; sourceTree = "<group>"; };
+		08BB139B1F45E1990041CCAC /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		08BB139C1F45E1990041CCAC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		08BB139D1F45E1990041CCAC /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
+		08BB13A51F45E2C70041CCAC /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		08F75DE21F3E34A20082E665 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08F75DE41F3E34FC0082E665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08F75DE81F3E354C0082E665 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,6 +208,18 @@
 			path = OpenWeatherMap;
 			sourceTree = "<group>";
 		};
+		08BB13981F45E1870041CCAC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				08BB13991F45E1980041CCAC /* LoginInteractor.swift */,
+				08BB139A1F45E1990041CCAC /* LoginInterfaces.swift */,
+				08BB139B1F45E1990041CCAC /* LoginPresenter.swift */,
+				08BB139C1F45E1990041CCAC /* LoginViewController.swift */,
+				08BB139D1F45E1990041CCAC /* LoginWireframe.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		08F75DDE1F3E33EC0082E665 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +245,7 @@
 		08F75DE01F3E34070082E665 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				08BB13981F45E1870041CCAC /* Login */,
 				08F75E0C1F3E3A840082E665 /* TabBar */,
 				08F75E0D1F3E3A9C0082E665 /* Home */,
 				084F97471F422A78003F418F /* Favorites */,
@@ -256,6 +281,7 @@
 				084F97371F422690003F418F /* Home.storyboard */,
 				084F97391F4226A8003F418F /* Favorites.storyboard */,
 				084F973B1F4226B2003F418F /* Settings.storyboard */,
+				08BB13A51F45E2C70041CCAC /* Login.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -428,6 +454,7 @@
 				084F97381F422690003F418F /* Home.storyboard in Resources */,
 				084F973A1F4226A8003F418F /* Favorites.storyboard in Resources */,
 				08F75DEC1F3E36040082E665 /* LaunchScreen.storyboard in Resources */,
+				08BB13A61F45E2C70041CCAC /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +517,9 @@
 				084F97441F4227D9003F418F /* TabBarPresenter.swift in Sources */,
 				084F97421F4227D9003F418F /* TabBarInteractor.swift in Sources */,
 				084F97451F4227D9003F418F /* TabBarViewController.swift in Sources */,
+				08BB13A11F45E1990041CCAC /* LoginViewController.swift in Sources */,
 				08BB13951F4383C10041CCAC /* OWMMain.swift in Sources */,
+				08BB139F1F45E1990041CCAC /* LoginInterfaces.swift in Sources */,
 				084F97511F422A95003F418F /* SettingsWireframe.swift in Sources */,
 				084F97651F422B0C003F418F /* HomeWireframe.swift in Sources */,
 				084F97581F422AD7003F418F /* FavoritesInterfaces.swift in Sources */,
@@ -509,6 +538,7 @@
 				084F97631F422B0C003F418F /* HomePresenter.swift in Sources */,
 				084F97461F4227D9003F418F /* TabBarWireframe.swift in Sources */,
 				08F75DF21F3E37150082E665 /* ViewInterface.swift in Sources */,
+				08BB139E1F45E1990041CCAC /* LoginInteractor.swift in Sources */,
 				084F975B1F422AD7003F418F /* FavoritesWireframe.swift in Sources */,
 				084F97571F422AD7003F418F /* FavoritesInteractor.swift in Sources */,
 				08BB13971F4385490041CCAC /* OWMWind.swift in Sources */,
@@ -518,8 +548,10 @@
 				08F75E0A1F3E39C90082E665 /* Constants.swift in Sources */,
 				08F75E081F3E399E0082E665 /* Router.swift in Sources */,
 				084F97611F422B0C003F418F /* HomeInteractor.swift in Sources */,
+				08BB13A01F45E1990041CCAC /* LoginPresenter.swift in Sources */,
 				08F75DF41F3E372C0082E665 /* PresenterInterface.swift in Sources */,
 				084F974F1F422A95003F418F /* SettingsPresenter.swift in Sources */,
+				08BB13A21F45E1990041CCAC /* LoginWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
