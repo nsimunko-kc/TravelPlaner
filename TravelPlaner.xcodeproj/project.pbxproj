@@ -45,6 +45,11 @@
 		08BB13A21F45E1990041CCAC /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB139D1F45E1990041CCAC /* LoginWireframe.swift */; };
 		08BB13A61F45E2C70041CCAC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08BB13A51F45E2C70041CCAC /* Login.storyboard */; };
 		08BB13A81F47240F0041CCAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08BB13A71F47240F0041CCAC /* GoogleService-Info.plist */; };
+		08BB13AF1F4779F60041CCAC /* PlanInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13AA1F4779F60041CCAC /* PlanInteractor.swift */; };
+		08BB13B01F4779F60041CCAC /* PlanInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13AB1F4779F60041CCAC /* PlanInterfaces.swift */; };
+		08BB13B11F4779F60041CCAC /* PlanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13AC1F4779F60041CCAC /* PlanPresenter.swift */; };
+		08BB13B21F4779F60041CCAC /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13AD1F4779F60041CCAC /* PlanViewController.swift */; };
+		08BB13B31F4779F60041CCAC /* PlanWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13AE1F4779F60041CCAC /* PlanWireframe.swift */; };
 		08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F75DE21F3E34A20082E665 /* AppDelegate.swift */; };
 		08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE41F3E34FC0082E665 /* Assets.xcassets */; };
 		08F75DE91F3E354C0082E665 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE81F3E354C0082E665 /* Info.plist */; };
@@ -98,6 +103,11 @@
 		08BB139D1F45E1990041CCAC /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
 		08BB13A51F45E2C70041CCAC /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		08BB13A71F47240F0041CCAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		08BB13AA1F4779F60041CCAC /* PlanInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanInteractor.swift; sourceTree = "<group>"; };
+		08BB13AB1F4779F60041CCAC /* PlanInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanInterfaces.swift; sourceTree = "<group>"; };
+		08BB13AC1F4779F60041CCAC /* PlanPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanPresenter.swift; sourceTree = "<group>"; };
+		08BB13AD1F4779F60041CCAC /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		08BB13AE1F4779F60041CCAC /* PlanWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanWireframe.swift; sourceTree = "<group>"; };
 		08F75DE21F3E34A20082E665 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08F75DE41F3E34FC0082E665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08F75DE81F3E354C0082E665 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -220,6 +230,18 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		08BB13A91F4779D90041CCAC /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				08BB13AA1F4779F60041CCAC /* PlanInteractor.swift */,
+				08BB13AB1F4779F60041CCAC /* PlanInterfaces.swift */,
+				08BB13AC1F4779F60041CCAC /* PlanPresenter.swift */,
+				08BB13AD1F4779F60041CCAC /* PlanViewController.swift */,
+				08BB13AE1F4779F60041CCAC /* PlanWireframe.swift */,
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
 		08F75DDE1F3E33EC0082E665 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +271,7 @@
 				08F75E0C1F3E3A840082E665 /* TabBar */,
 				08F75E0D1F3E3A9C0082E665 /* Home */,
 				084F97471F422A78003F418F /* Favorites */,
+				08BB13A91F4779D90041CCAC /* Plan */,
 				08F75E0E1F3E3AAC0082E665 /* Settings */,
 			);
 			path = Modules;
@@ -532,7 +555,9 @@
 				08BB13921F4382FD0041CCAC /* OWMCity.swift in Sources */,
 				08BB13931F4382FD0041CCAC /* OWMWeather.swift in Sources */,
 				084F97641F422B0C003F418F /* HomeViewController.swift in Sources */,
+				08BB13B01F4779F60041CCAC /* PlanInterfaces.swift in Sources */,
 				08F75DF81F3E378E0082E665 /* WireframeInterface.swift in Sources */,
+				08BB13B21F4779F60041CCAC /* PlanViewController.swift in Sources */,
 				084F97621F422B0C003F418F /* HomeInterfaces.swift in Sources */,
 				084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */,
 				084F97631F422B0C003F418F /* HomePresenter.swift in Sources */,
@@ -542,6 +567,8 @@
 				084F975B1F422AD7003F418F /* FavoritesWireframe.swift in Sources */,
 				084F97571F422AD7003F418F /* FavoritesInteractor.swift in Sources */,
 				08BB13971F4385490041CCAC /* OWMWind.swift in Sources */,
+				08BB13AF1F4779F60041CCAC /* PlanInteractor.swift in Sources */,
+				08BB13B11F4779F60041CCAC /* PlanPresenter.swift in Sources */,
 				08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */,
 				084F976B1F436987003F418F /* UIColorExtension.swift in Sources */,
 				084F975A1F422AD7003F418F /* FavoritesViewController.swift in Sources */,
@@ -552,6 +579,7 @@
 				08F75DF41F3E372C0082E665 /* PresenterInterface.swift in Sources */,
 				084F974F1F422A95003F418F /* SettingsPresenter.swift in Sources */,
 				08BB13A21F45E1990041CCAC /* LoginWireframe.swift in Sources */,
+				08BB13B31F4779F60041CCAC /* PlanWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

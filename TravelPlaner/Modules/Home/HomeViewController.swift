@@ -22,6 +22,7 @@ final class HomeViewController: UIViewController {
     // MARK: - IBOutlets -
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var placeholderView: UIView!
     
     // MARK: - Lifecycle -
     
