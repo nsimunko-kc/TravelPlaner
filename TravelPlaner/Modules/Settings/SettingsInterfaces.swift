@@ -13,6 +13,7 @@ import UIKit
 // MARK: - Navigation -
 
 enum SettingsNavigationAction {
+    case logout
 }
 
 // MARK: - Settings Wireframe Interface -
@@ -25,12 +26,18 @@ protocol SettingsWireframeInterface: WireframeInterface {
 // MARK: - Settings View Interface -
 
 protocol SettingsViewInterface: ViewInterface {
+    func reloadData()
 }
 
 // MARK: - Settings Presenter Interface -
 
 protocol SettingsPresenterInterface: PresenterInterface {
     func didSelectNavigationAction(action: SettingsNavigationAction)
+    
+    func numberOfSections() -> Int
+    func numberOfRows(in section: Int) -> Int
+    func didSelectItem(at indexPath: IndexPath)
+    func item(at indexPath: IndexPath) -> SettingsItem
 }
 
 // MARK: - Settings Interactor Interface -

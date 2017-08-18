@@ -43,6 +43,10 @@ final class HomeViewController: UIViewController {
     @objc fileprivate func _newPlanButtonTapped() {
         
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 // MARK: - Extensions -

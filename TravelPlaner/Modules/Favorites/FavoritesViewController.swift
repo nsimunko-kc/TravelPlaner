@@ -43,6 +43,10 @@ final class FavoritesViewController: UIViewController {
     @objc fileprivate func _newLocationButtonTapped() {
         
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 // MARK: - Extensions -

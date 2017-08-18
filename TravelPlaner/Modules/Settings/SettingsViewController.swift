@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import MRProgress
 
 final class SettingsViewController: UIViewController {
 
@@ -20,10 +21,13 @@ final class SettingsViewController: UIViewController {
 
     // MARK: - IBOutlets -
     
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
         
         _configureUI()
     }
@@ -38,11 +42,22 @@ final class SettingsViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.appLightBlue()
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 // MARK: - Extensions -
 
 extension SettingsViewController: SettingsViewInterface {
+    
+    func reloadData() {
+        MRProgressOverlayView.showOverlayAdded(to: self.view, animated: true)
+        tableView.reloadData()
+        MRProgressOverlayView.dismissOverlay(for: self.view, animated: true)
+    }
+    
 }
 
 extension SettingsViewController: TabBarItemConfigurable {
@@ -57,4 +72,35 @@ extension SettingsViewController: TabBarItemConfigurable {
     func tabBarItemSelectedImageName() -> String {
         return "ic_settings"
     }
+}
+
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfRows(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = presenter.item(at: indexPath)
+        
+        switch item {
+        case .logout:
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath)
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter.didSelectItem(at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+    
 }

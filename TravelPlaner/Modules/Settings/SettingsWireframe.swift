@@ -61,8 +61,14 @@ extension SettingsWireframe: SettingsWireframeInterface {
     
     func performNavigationAction(action: SettingsNavigationAction) {
         switch action {
-        default:
-            break
+        case .logout:
+            guard let window = UIApplication.shared.windows.first else {
+                return
+            }
+            
+            UIView.transition(with: window, duration: 0.6, options: .transitionFlipFromLeft, animations: {
+                window.rootViewController = LoginWireframe().instantiateAndConfigureModule()
+            }, completion: nil)
         }
     }
 

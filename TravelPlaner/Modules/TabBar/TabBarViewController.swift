@@ -31,6 +31,10 @@ final class TabBarViewController: UITabBarController {
     // MARK: - IBActions -
 
     // MARK: - Private functions -
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 // MARK: - Extensions -
