@@ -38,4 +38,12 @@ extension LoginPresenter: LoginPresenterInterface {
         _wireframe.performNavigationAction(action: action)
     }
     
+    func didSignIn() {
+        _wireframe.performNavigationAction(action: .didSignIn)
+    }
+    
+    func didFailToSignIn(withError error: Error) {
+        _wireframe.showAlert(title: "Authentication Error", message: error.localizedDescription, actions: nil)
+    }
+    
 }

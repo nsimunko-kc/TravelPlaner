@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,16 +23,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2G-34-dT1">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <rect key="frame" x="162" y="308" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="acy-Pz-bgG"/>
+                                    <constraint firstAttribute="width" constant="50" id="dOL-e3-AIp"/>
+                                </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prijavite se koristeći Google račun." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-Ri-5xA">
+                                <rect key="frame" x="56" y="195" width="263" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Y2G-34-dT1" secondAttribute="trailing" constant="68" id="5WH-zw-ctO"/>
-                            <constraint firstItem="Y2G-34-dT1" firstAttribute="top" secondItem="O0w-RE-J2W" secondAttribute="bottom" constant="249" id="Y7T-t8-FXa"/>
-                            <constraint firstItem="Y2G-34-dT1" firstAttribute="leading" secondItem="K4N-iG-6TE" secondAttribute="leading" constant="67" id="lK8-Df-jhm"/>
-                            <constraint firstItem="C0v-X3-MtQ" firstAttribute="top" secondItem="Y2G-34-dT1" secondAttribute="bottom" constant="270" id="mMa-Wz-49Z"/>
+                            <constraint firstItem="SIv-Ri-5xA" firstAttribute="leading" secondItem="K4N-iG-6TE" secondAttribute="leadingMargin" constant="40" id="9ai-3n-xAr"/>
+                            <constraint firstItem="Y2G-34-dT1" firstAttribute="top" secondItem="SIv-Ri-5xA" secondAttribute="bottom" constant="60" id="Hya-4p-RR2"/>
+                            <constraint firstItem="SIv-Ri-5xA" firstAttribute="centerX" secondItem="K4N-iG-6TE" secondAttribute="centerX" id="PtF-RX-784"/>
+                            <constraint firstItem="Y2G-34-dT1" firstAttribute="centerX" secondItem="K4N-iG-6TE" secondAttribute="centerX" id="XAs-P3-3vU"/>
+                            <constraint firstItem="Y2G-34-dT1" firstAttribute="centerY" secondItem="K4N-iG-6TE" secondAttribute="centerY" id="YfJ-vW-fcI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SIv-Ri-5xA" secondAttribute="trailing" constant="40" id="ufR-nm-bt8"/>
                         </constraints>
                     </view>
                     <connections>

@@ -9,10 +9,16 @@
 //
 
 import UIKit
+import GoogleSignIn
+import GoogleAPIClientForREST
 
 final class LoginViewController: UIViewController {
 
     // MARK: - Private properties -
+    
+    fileprivate let _scopes = [kGTLRAuthScopeCalendar]
+    fileprivate let _service = GTLRCalendarService()
+    fileprivate let _signInButton = GIDSignInButton()
     
     // MARK: - Public properties -
     
@@ -26,6 +32,15 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Configure Google Sign-in.
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().scopes = _scopes
+        GIDSignIn.sharedInstance().signInSilently()
+        
+        signInButtonContainerView.addSubview(_signInButton)
+        _signInButton.center = signInButtonContainerView.convert(signInButtonContainerView.center, from: signInButtonContainerView.superview)
     }
 
     // MARK: - IBActions -
@@ -36,4 +51,22 @@ final class LoginViewController: UIViewController {
 // MARK: - Extensions -
 
 extension LoginViewController: LoginViewInterface {
+}
+
+extension LoginViewController: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            self._service.authorizer = nil
+            presenter.didFailToSignIn(withError: error)
+        } else {
+            presenter.didSignIn()
+        }
+    }
+    
+}
+
+extension LoginViewController: GIDSignInUIDelegate {
+    
+    
 }

@@ -60,8 +60,14 @@ extension LoginWireframe: LoginWireframeInterface {
     
     func performNavigationAction(action: LoginNavigationAction) {
         switch action {
-        default:
-            break
+        case .didSignIn:
+            guard let window = UIApplication.shared.windows.first else {
+                return
+            }
+            
+            UIView.transition(with: window, duration: 0.6, options: .transitionFlipFromLeft, animations: {
+                window.rootViewController = TabBarWireframe().instantiateAndConfigureModule()
+            }, completion: nil)
         }
     }
 

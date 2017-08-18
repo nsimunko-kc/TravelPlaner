@@ -13,6 +13,7 @@ import UIKit
 // MARK: - Navigation -
 
 enum LoginNavigationAction {
+    case didSignIn
 }
 
 // MARK: - Login Wireframe Interface -
@@ -31,6 +32,8 @@ protocol LoginViewInterface: ViewInterface {
 
 protocol LoginPresenterInterface: PresenterInterface {
     func didSelectNavigationAction(action: LoginNavigationAction)
+    func didSignIn()
+    func didFailToSignIn(withError error: Error)
 }
 
 // MARK: - Login Interactor Interface -

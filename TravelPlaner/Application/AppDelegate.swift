@@ -40,7 +40,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let wireframe: WireframeInterface = LoginWireframe()
+        // Initialize sign-in
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        let wireframe: WireframeInterface
+        
+        if let user = GIDSignIn.sharedInstance().currentUser {
+            wireframe = TabBarWireframe()
+        } else {
+            wireframe = LoginWireframe()
+        }
+        
         let rootViewController = wireframe.instantiateAndConfigureModule()
         
         window = UIWindow(frame: UIScreen.main.bounds)

@@ -33,7 +33,6 @@
 		084F97651F422B0C003F418F /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97601F422B0C003F418F /* HomeWireframe.swift */; };
 		084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */; };
 		084F976B1F436987003F418F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F976A1F436987003F418F /* UIColorExtension.swift */; };
-		08BB13841F437D040041CCAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08BB13831F437D040041CCAC /* GoogleService-Info.plist */; };
 		08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB138E1F4382F20041CCAC /* GettyImage.swift */; };
 		08BB13921F4382FD0041CCAC /* OWMCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13901F4382FD0041CCAC /* OWMCity.swift */; };
 		08BB13931F4382FD0041CCAC /* OWMWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13911F4382FD0041CCAC /* OWMWeather.swift */; };
@@ -45,6 +44,7 @@
 		08BB13A11F45E1990041CCAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB139C1F45E1990041CCAC /* LoginViewController.swift */; };
 		08BB13A21F45E1990041CCAC /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB139D1F45E1990041CCAC /* LoginWireframe.swift */; };
 		08BB13A61F45E2C70041CCAC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08BB13A51F45E2C70041CCAC /* Login.storyboard */; };
+		08BB13A81F47240F0041CCAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08BB13A71F47240F0041CCAC /* GoogleService-Info.plist */; };
 		08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F75DE21F3E34A20082E665 /* AppDelegate.swift */; };
 		08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE41F3E34FC0082E665 /* Assets.xcassets */; };
 		08F75DE91F3E354C0082E665 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F75DE81F3E354C0082E665 /* Info.plist */; };
@@ -86,7 +86,6 @@
 		084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemConfigurable.swift; sourceTree = "<group>"; };
 		084F976A1F436987003F418F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		08BB13831F437D040041CCAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		08BB138E1F4382F20041CCAC /* GettyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImage.swift; sourceTree = "<group>"; };
 		08BB13901F4382FD0041CCAC /* OWMCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMCity.swift; sourceTree = "<group>"; };
 		08BB13911F4382FD0041CCAC /* OWMWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMWeather.swift; sourceTree = "<group>"; };
@@ -98,6 +97,7 @@
 		08BB139C1F45E1990041CCAC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		08BB139D1F45E1990041CCAC /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
 		08BB13A51F45E2C70041CCAC /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		08BB13A71F47240F0041CCAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		08F75DE21F3E34A20082E665 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08F75DE41F3E34FC0082E665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08F75DE81F3E354C0082E665 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -267,8 +267,8 @@
 		08F75DE61F3E35150082E665 /* Other-Sources */ = {
 			isa = PBXGroup;
 			children = (
+				08BB13A71F47240F0041CCAC /* GoogleService-Info.plist */,
 				08F75DE81F3E354C0082E665 /* Info.plist */,
-				08BB13831F437D040041CCAC /* GoogleService-Info.plist */,
 			);
 			path = "Other-Sources";
 			sourceTree = "<group>";
@@ -447,8 +447,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				084F97361F42267B003F418F /* TabBar.storyboard in Resources */,
-				08BB13841F437D040041CCAC /* GoogleService-Info.plist in Resources */,
 				08F75DE91F3E354C0082E665 /* Info.plist in Resources */,
+				08BB13A81F47240F0041CCAC /* GoogleService-Info.plist in Resources */,
 				08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */,
 				084F973C1F4226B2003F418F /* Settings.storyboard in Resources */,
 				084F97381F422690003F418F /* Home.storyboard in Resources */,
