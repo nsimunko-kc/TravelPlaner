@@ -25,12 +25,18 @@ protocol FavoritesWireframeInterface: WireframeInterface {
 // MARK: - Favorites View Interface -
 
 protocol FavoritesViewInterface: ViewInterface {
+    func reloadData()
 }
 
 // MARK: - Favorites Presenter Interface -
 
 protocol FavoritesPresenterInterface: PresenterInterface {
     func didSelectNavigationAction(action: FavoritesNavigationAction)
+    
+    func numberOfSections() -> Int
+    func numberOfRows(in section: Int) -> Int
+    func didSelectItem(at indexPath: IndexPath)
+    func item(at indexPath: IndexPath) -> FavoriteItem
 }
 
 // MARK: - Favorites Interactor Interface -

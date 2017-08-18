@@ -20,10 +20,13 @@ final class FavoritesViewController: UIViewController {
 
     // MARK: - IBOutlets -
     
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
         
         _configureUI()
     }
@@ -52,6 +55,11 @@ final class FavoritesViewController: UIViewController {
 // MARK: - Extensions -
 
 extension FavoritesViewController: FavoritesViewInterface {
+    
+    func reloadData() {
+        
+    }
+    
 }
 
 extension FavoritesViewController: TabBarItemConfigurable {
@@ -66,4 +74,28 @@ extension FavoritesViewController: TabBarItemConfigurable {
     func tabBarItemSelectedImageName() -> String {
         return "ic_star"
     }
+}
+
+extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfRows(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+    
 }

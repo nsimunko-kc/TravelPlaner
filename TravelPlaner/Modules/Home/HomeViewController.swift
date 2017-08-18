@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import MRProgress
 
 final class HomeViewController: UIViewController {
 
@@ -20,10 +21,13 @@ final class HomeViewController: UIViewController {
 
     // MARK: - IBOutlets -
     
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
         
         _configureUI()
     }
@@ -52,6 +56,11 @@ final class HomeViewController: UIViewController {
 // MARK: - Extensions -
 
 extension HomeViewController: HomeViewInterface {
+    
+    func reloadData() {
+        
+    }
+    
 }
 
 extension HomeViewController: TabBarItemConfigurable {
@@ -66,4 +75,28 @@ extension HomeViewController: TabBarItemConfigurable {
     func tabBarItemSelectedImageName() -> String {
         return "ic_home"
     }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfRows(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+    
 }

@@ -10,6 +10,10 @@
 
 import UIKit
 
+enum HomeItem {
+    
+}
+
 final class HomePresenter: NSObject {
     
     // MARK: - Private properties -
@@ -36,6 +40,22 @@ extension HomePresenter: HomePresenterInterface {
     
     func didSelectNavigationAction(action: HomeNavigationAction) {
         _wireframe.performNavigationAction(action: action)
+    }
+    
+    func numberOfSections() -> Int {
+        
+    }
+    
+    func numberOfRows(in section: Int) -> Int {
+        
+    }
+    
+    func item(at indexPath: IndexPath) -> HomeItem {
+        
+    }
+    
+    func viewDidLoad() {
+        
     }
     
 }

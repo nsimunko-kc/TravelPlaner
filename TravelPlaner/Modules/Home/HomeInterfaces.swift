@@ -25,15 +25,21 @@ protocol HomeWireframeInterface: WireframeInterface {
 // MARK: - Home View Interface -
 
 protocol HomeViewInterface: ViewInterface {
+    func reloadData()
 }
 
 // MARK: - Home Presenter Interface -
 
 protocol HomePresenterInterface: PresenterInterface {
     func didSelectNavigationAction(action: HomeNavigationAction)
+    func numberOfSections() -> Int
+    func numberOfRows(in section: Int) -> Int
+    func didSelectItem(at indexPath: IndexPath)
+    func item(at indexPath: IndexPath) -> HomeItem
 }
 
 // MARK: - Home Interactor Interface -
 
 protocol HomeInteractorInterface: InteractorInterface {
+    
 }

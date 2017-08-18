@@ -10,6 +10,10 @@
 
 import UIKit
 
+enum FavoriteItem {
+    
+}
+
 final class FavoritesPresenter: NSObject {
     
     // MARK: - Private properties -
@@ -36,6 +40,22 @@ extension FavoritesPresenter: FavoritesPresenterInterface {
     
     func didSelectNavigationAction(action: FavoritesNavigationAction) {
         _wireframe.performNavigationAction(action: action)
+    }
+    
+    func numberOfSections() -> Int {
+        
+    }
+    
+    func numberOfRows(in section: Int) -> Int {
+        
+    }
+    
+    func item(at indexPath: IndexPath) -> FavoriteItem {
+        
+    }
+    
+    func viewDidLoad() {
+        
     }
     
 }
