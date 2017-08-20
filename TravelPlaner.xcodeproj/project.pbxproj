@@ -33,6 +33,7 @@
 		084F97651F422B0C003F418F /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97601F422B0C003F418F /* HomeWireframe.swift */; };
 		084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */; };
 		084F976B1F436987003F418F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F976A1F436987003F418F /* UIColorExtension.swift */; };
+		08A3C68A1F49BF910042467C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A3C6891F49BF910042467C /* Plan.storyboard */; };
 		08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB138E1F4382F20041CCAC /* GettyImage.swift */; };
 		08BB13921F4382FD0041CCAC /* OWMCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13901F4382FD0041CCAC /* OWMCity.swift */; };
 		08BB13931F4382FD0041CCAC /* OWMWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB13911F4382FD0041CCAC /* OWMWeather.swift */; };
@@ -91,6 +92,7 @@
 		084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemConfigurable.swift; sourceTree = "<group>"; };
 		084F976A1F436987003F418F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A3C6891F49BF910042467C /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		08BB138E1F4382F20041CCAC /* GettyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImage.swift; sourceTree = "<group>"; };
 		08BB13901F4382FD0041CCAC /* OWMCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMCity.swift; sourceTree = "<group>"; };
 		08BB13911F4382FD0041CCAC /* OWMWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMWeather.swift; sourceTree = "<group>"; };
@@ -192,6 +194,20 @@
 			path = TravelPlaner;
 			sourceTree = "<group>";
 		};
+		08A3C68B1F49C3600042467C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		08A3C68C1F49C3680042467C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		08BB138B1F4382C40041CCAC /* Google */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +249,8 @@
 		08BB13A91F4779D90041CCAC /* Plan */ = {
 			isa = PBXGroup;
 			children = (
+				08A3C68C1F49C3680042467C /* Cells */,
+				08A3C68B1F49C3600042467C /* Views */,
 				08BB13AA1F4779F60041CCAC /* PlanInteractor.swift */,
 				08BB13AB1F4779F60041CCAC /* PlanInterfaces.swift */,
 				08BB13AC1F4779F60041CCAC /* PlanPresenter.swift */,
@@ -305,6 +323,7 @@
 				084F97391F4226A8003F418F /* Favorites.storyboard */,
 				084F973B1F4226B2003F418F /* Settings.storyboard */,
 				08BB13A51F45E2C70041CCAC /* Login.storyboard */,
+				08A3C6891F49BF910042467C /* Plan.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -472,6 +491,7 @@
 				084F97361F42267B003F418F /* TabBar.storyboard in Resources */,
 				08F75DE91F3E354C0082E665 /* Info.plist in Resources */,
 				08BB13A81F47240F0041CCAC /* GoogleService-Info.plist in Resources */,
+				08A3C68A1F49BF910042467C /* Plan.storyboard in Resources */,
 				08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */,
 				084F973C1F4226B2003F418F /* Settings.storyboard in Resources */,
 				084F97381F422690003F418F /* Home.storyboard in Resources */,

@@ -10,6 +10,13 @@
 
 import UIKit
 
+enum PlanItem {
+    case dateItem
+    case locationItem
+    case forecastItem
+    case imageItem
+}
+
 final class PlanPresenter: NSObject {
     
     // MARK: - Private properties -

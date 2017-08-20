@@ -18,7 +18,7 @@ final class PlanWireframe: NSObject {
     // MARK: - Private properties -
 
     private var _context: PlanContext?
-    private let _storyboard: UIStoryboard = UIStoryboard(name: <#Storyboard name#>, bundle: nil)
+    private let _storyboard: UIStoryboard = UIStoryboard(name: Constants.StoryboardIdentifiers.Plan, bundle: nil)
     
     // MARK: - Public properties -
     
@@ -36,11 +36,11 @@ final class PlanWireframe: NSObject {
     // MARK: - Module setup -
     
     func instantiateAndConfigureModule() -> UIViewController {
-        guard let viewController = _storyboard.instantiateViewControllerWithIdentifier("PlanViewController") as? PlanViewController else {
-            fatalError("No view controller found with the following identifier: PlanViewController")
+        guard let viewController = _storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifiers.Plan) as? PlanViewController else {
+            fatalError("No view controller found with the following identifier: \(Constants.ViewControllerIdentifiers.Plan)")
         }
         
-        configureModuleWithViewController(viewController)
+        configureModuleWithViewController(viewController: viewController)
         
         return viewController
     }

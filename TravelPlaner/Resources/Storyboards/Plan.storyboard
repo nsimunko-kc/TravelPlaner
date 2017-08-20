@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Plan View Controller-->
+        <scene sceneID="zGR-dE-XnT">
+            <objects>
+                <viewController storyboardIdentifier="PlanViewController" id="bCY-Ek-XEh" customClass="PlanViewController" customModule="TravelPlaner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dBj-n1-RMc"/>
+                        <viewControllerLayoutGuide type="bottom" id="a8E-Ks-cvp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VOg-G0-9OJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REI-xD-s2q">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="r42-AJ-kzh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="Spremi">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSavePlanButton:" destination="bCY-Ek-XEh" eventType="touchUpInside" id="V6w-p5-oAc"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="wak-wA-0u8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bCY-Ek-XEh" id="z13-JJ-D9T"/>
+                                    <outlet property="delegate" destination="bCY-Ek-XEh" id="AU1-qB-c4s"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="REI-xD-s2q" secondAttribute="bottom" id="19M-R4-oru"/>
+                            <constraint firstItem="wak-wA-0u8" firstAttribute="top" secondItem="VOg-G0-9OJ" secondAttribute="top" id="19l-Sn-4fc"/>
+                            <constraint firstAttribute="trailing" secondItem="REI-xD-s2q" secondAttribute="trailing" id="3nl-bD-TUy"/>
+                            <constraint firstItem="REI-xD-s2q" firstAttribute="leading" secondItem="VOg-G0-9OJ" secondAttribute="leading" id="59I-1Z-Wzl"/>
+                            <constraint firstAttribute="trailing" secondItem="wak-wA-0u8" secondAttribute="trailing" id="IoL-S5-8TF"/>
+                            <constraint firstItem="wak-wA-0u8" firstAttribute="leading" secondItem="VOg-G0-9OJ" secondAttribute="leading" id="YUL-v4-A4x"/>
+                            <constraint firstItem="REI-xD-s2q" firstAttribute="top" secondItem="wak-wA-0u8" secondAttribute="bottom" id="fnk-vA-0ox"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="wak-wA-0u8" id="Qp3-Nc-F08"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrU-vf-PTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="184"/>
+        </scene>
+    </scenes>
+</document>

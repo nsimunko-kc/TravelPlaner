@@ -31,6 +31,9 @@ protocol PlanViewInterface: ViewInterface {
 
 protocol PlanPresenterInterface: PresenterInterface {
     func didSelectNavigationAction(action: PlanNavigationAction)
+    func numberOfSections() -> Int
+    func numberOfItems(in section: Int) -> Int
+    func item(for indexPath: IndexPath) -> PlanItem
 }
 
 // MARK: - Plan Interactor Interface -

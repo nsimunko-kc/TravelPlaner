@@ -20,6 +20,8 @@ final class PlanViewController: UIViewController {
 
     // MARK: - IBOutlets -
     
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
@@ -27,6 +29,10 @@ final class PlanViewController: UIViewController {
     }
 
     // MARK: - IBActions -
+    
+    @IBAction func didTapSavePlanButton(_ sender: UIButton) {
+        
+    }
 
     // MARK: - Private functions -
 }
@@ -34,4 +40,24 @@ final class PlanViewController: UIViewController {
 // MARK: - Extensions -
 
 extension PlanViewController: PlanViewInterface {
+}
+
+extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 44.0 : 0.001
+    }
+    
 }
