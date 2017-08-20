@@ -46,7 +46,7 @@ final class HomeViewController: UIViewController {
     }
     
     @objc fileprivate func _newPlanButtonTapped() {
-        
+        presenter.didSelectNewPlanAction()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -94,6 +94,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter.didSelectEditPlanAction(at: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

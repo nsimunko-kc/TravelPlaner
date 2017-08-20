@@ -13,6 +13,8 @@ import UIKit
 // MARK: - Navigation -
 
 enum HomeNavigationAction {
+    case newPlanAction
+    case editPlanAction(PlanInfoItem)
 }
 
 // MARK: - Home Wireframe Interface -
@@ -32,10 +34,12 @@ protocol HomeViewInterface: ViewInterface {
 
 protocol HomePresenterInterface: PresenterInterface {
     func didSelectNavigationAction(action: HomeNavigationAction)
+    func didSelectNewPlanAction()
+    func didSelectEditPlanAction(at indexPath: IndexPath)
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
     func didSelectItem(at indexPath: IndexPath)
-    func item(at indexPath: IndexPath) -> HomeItem
+    func item(at indexPath: IndexPath) -> BasicPlanInfoItem
 }
 
 // MARK: - Home Interactor Interface -

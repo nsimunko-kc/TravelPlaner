@@ -21,16 +21,21 @@ final class PlanPresenter: NSObject {
     
     // MARK: - Private properties -
 
-    private weak var _view: PlanViewInterface?
-    private var _interactor: PlanInteractorInterface
-    private var _wireframe: PlanWireframeInterface
+    fileprivate weak var _view: PlanViewInterface?
+    fileprivate var _interactor: PlanInteractorInterface
+    fileprivate var _wireframe: PlanWireframeInterface
+    
+    fileprivate var _plan: BasicPlanInfoItem?
+    
+    fileprivate var _didSetLocation = false
     
     // MARK: - Lifecycle -
     
-    init (wireframe: PlanWireframeInterface, view: PlanViewInterface, interactor: PlanInteractorInterface) {
+    init (wireframe: PlanWireframeInterface, view: PlanViewInterface, interactor: PlanInteractorInterface, planInfoItem: BasicPlanInfoItem? = nil) {
         _wireframe = wireframe
         _view = view
         _interactor = interactor
+        _plan = planInfoItem
     }
 
     // MARK: - Private functions -
@@ -42,7 +47,19 @@ final class PlanPresenter: NSObject {
 extension PlanPresenter: PlanPresenterInterface {
     
     func didSelectNavigationAction(action: PlanNavigationAction) {
-        _wireframe.performNavigationAction(action)
+        _wireframe.performNavigationAction(action: action)
+    }
+    
+    func numberOfSections() -> Int {
+        
+    }
+    
+    func numberOfItems(in section: Int) -> Int {
+        
+    }
+    
+    func item(for indexPath: IndexPath) -> PlanItem {
+        
     }
     
 }

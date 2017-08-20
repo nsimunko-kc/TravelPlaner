@@ -10,10 +10,6 @@
 
 import UIKit
 
-enum HomeItem {
-    
-}
-
 final class HomePresenter: NSObject {
     
     // MARK: - Private properties -
@@ -21,6 +17,8 @@ final class HomePresenter: NSObject {
     fileprivate weak var _view: HomeViewInterface?
     fileprivate var _interactor: HomeInteractorInterface
     fileprivate var _wireframe: HomeWireframeInterface
+    
+    fileprivate var _items = [BasicPlanInfoItem]()
     
     // MARK: - Lifecycle -
     
@@ -42,6 +40,14 @@ extension HomePresenter: HomePresenterInterface {
         _wireframe.performNavigationAction(action: action)
     }
     
+    func didSelectNewPlanAction() {
+        _wireframe.performNavigationAction(action: .newPlanAction)
+    }
+    
+    func didSelectEditPlanAction(at indexPath: IndexPath) {
+        _wireframe.performNavigationAction(action: .editPlanAction(_items[indexPath.row]))
+    }
+    
     func numberOfSections() -> Int {
         
     }
@@ -50,8 +56,8 @@ extension HomePresenter: HomePresenterInterface {
         
     }
     
-    func item(at indexPath: IndexPath) -> HomeItem {
-        
+    func item(at indexPath: IndexPath) -> PlanInfoItem {
+        return _items[indexPath.row]
     }
     
     func viewDidLoad() {

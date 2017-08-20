@@ -11,6 +11,7 @@
 import UIKit
 
 struct PlanContext {
+    let plan: HomeItem
 }
 
 final class PlanWireframe: NSObject {
