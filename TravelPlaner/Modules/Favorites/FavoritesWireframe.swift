@@ -61,8 +61,10 @@ extension FavoritesWireframe: FavoritesWireframeInterface {
     
     func performNavigationAction(action: FavoritesNavigationAction) {
         switch action {
-        default:
-            break
+        case .newLocation:
+            let wireframe = LocationsWireframe()
+            let viewController = wireframe.instantiateAndConfigureModule()
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 

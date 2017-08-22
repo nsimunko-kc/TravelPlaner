@@ -13,6 +13,7 @@ import UIKit
 // MARK: - Navigation -
 
 enum FavoritesNavigationAction {
+    case newLocation
 }
 
 // MARK: - Favorites Wireframe Interface -
@@ -36,7 +37,7 @@ protocol FavoritesPresenterInterface: PresenterInterface {
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
     func didSelectItem(at indexPath: IndexPath)
-    func item(at indexPath: IndexPath) -> FavoriteItem
+    func item(at indexPath: IndexPath)
 }
 
 // MARK: - Favorites Interactor Interface -

@@ -26,6 +26,8 @@ final class PlanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _configureUI()
     }
 
     // MARK: - IBActions -
@@ -35,6 +37,11 @@ final class PlanViewController: UIViewController {
     }
 
     // MARK: - Private functions -
+    
+    fileprivate func _configureUI() {
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationItem.title = "Novi plan"
+    }
 }
 
 // MARK: - Extensions -
@@ -45,15 +52,15 @@ extension PlanViewController: PlanViewInterface {
 extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
+        return presenter.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        return presenter.numberOfItems(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

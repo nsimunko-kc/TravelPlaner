@@ -49,15 +49,19 @@ extension HomePresenter: HomePresenterInterface {
     }
     
     func numberOfSections() -> Int {
-        
+        return 0
     }
     
     func numberOfRows(in section: Int) -> Int {
-        
+        return 0
     }
     
-    func item(at indexPath: IndexPath) -> PlanInfoItem {
+    func item(at indexPath: IndexPath) -> BasicPlanInfoItem {
         return _items[indexPath.row]
+    }
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        
     }
     
     func viewDidLoad() {

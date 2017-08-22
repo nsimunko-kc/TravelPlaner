@@ -51,15 +51,15 @@ extension PlanPresenter: PlanPresenterInterface {
     }
     
     func numberOfSections() -> Int {
-        
+        return 0
     }
     
     func numberOfItems(in section: Int) -> Int {
-        
+        return 0
     }
     
     func item(for indexPath: IndexPath) -> PlanItem {
-        
+        return PlanItem.dateItem
     }
     
 }

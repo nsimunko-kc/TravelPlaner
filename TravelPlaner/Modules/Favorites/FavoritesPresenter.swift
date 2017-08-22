@@ -10,10 +10,6 @@
 
 import UIKit
 
-enum FavoriteItem {
-    
-}
-
 final class FavoritesPresenter: NSObject {
     
     // MARK: - Private properties -
@@ -43,14 +39,18 @@ extension FavoritesPresenter: FavoritesPresenterInterface {
     }
     
     func numberOfSections() -> Int {
-        
+        return 0
     }
     
     func numberOfRows(in section: Int) -> Int {
+        return 0
+    }
+    
+    func item(at indexPath: IndexPath) {
         
     }
     
-    func item(at indexPath: IndexPath) -> FavoriteItem {
+    func didSelectItem(at indexPath: IndexPath) {
         
     }
     

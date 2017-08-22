@@ -14,7 +14,7 @@ import UIKit
 
 enum HomeNavigationAction {
     case newPlanAction
-    case editPlanAction(PlanInfoItem)
+    case editPlanAction(BasicPlanInfoItem)
 }
 
 // MARK: - Home Wireframe Interface -

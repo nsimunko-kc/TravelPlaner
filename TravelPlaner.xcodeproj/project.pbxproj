@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080E95781F4C252700D1BA3C /* LocationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E95731F4C252700D1BA3C /* LocationsInteractor.swift */; };
+		080E95791F4C252700D1BA3C /* LocationsInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E95741F4C252700D1BA3C /* LocationsInterfaces.swift */; };
+		080E957A1F4C252700D1BA3C /* LocationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E95751F4C252700D1BA3C /* LocationsPresenter.swift */; };
+		080E957B1F4C252700D1BA3C /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E95761F4C252700D1BA3C /* LocationsViewController.swift */; };
+		080E957C1F4C252700D1BA3C /* LocationsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E95771F4C252700D1BA3C /* LocationsWireframe.swift */; };
+		080E95801F4C255600D1BA3C /* Locations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080E957F1F4C255600D1BA3C /* Locations.storyboard */; };
 		084F97361F42267B003F418F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084F97351F42267B003F418F /* TabBar.storyboard */; };
 		084F97381F422690003F418F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084F97371F422690003F418F /* Home.storyboard */; };
 		084F973A1F4226A8003F418F /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084F97391F4226A8003F418F /* Favorites.storyboard */; };
@@ -66,6 +72,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		080E95731F4C252700D1BA3C /* LocationsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsInteractor.swift; sourceTree = "<group>"; };
+		080E95741F4C252700D1BA3C /* LocationsInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsInterfaces.swift; sourceTree = "<group>"; };
+		080E95751F4C252700D1BA3C /* LocationsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsPresenter.swift; sourceTree = "<group>"; };
+		080E95761F4C252700D1BA3C /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		080E95771F4C252700D1BA3C /* LocationsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsWireframe.swift; sourceTree = "<group>"; };
+		080E957F1F4C255600D1BA3C /* Locations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Locations.storyboard; sourceTree = "<group>"; };
 		084F97351F42267B003F418F /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		084F97371F422690003F418F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		084F97391F4226A8003F418F /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
@@ -139,6 +151,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080E95721F4C24F200D1BA3C /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				080E95731F4C252700D1BA3C /* LocationsInteractor.swift */,
+				080E95741F4C252700D1BA3C /* LocationsInterfaces.swift */,
+				080E95751F4C252700D1BA3C /* LocationsPresenter.swift */,
+				080E95761F4C252700D1BA3C /* LocationsViewController.swift */,
+				080E95771F4C252700D1BA3C /* LocationsWireframe.swift */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
 		084F97471F422A78003F418F /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +316,7 @@
 				08F75E0D1F3E3A9C0082E665 /* Home */,
 				084F97471F422A78003F418F /* Favorites */,
 				08BB13A91F4779D90041CCAC /* Plan */,
+				080E95721F4C24F200D1BA3C /* Locations */,
 				08F75E0E1F3E3AAC0082E665 /* Settings */,
 			);
 			path = Modules;
@@ -326,6 +351,7 @@
 				084F973B1F4226B2003F418F /* Settings.storyboard */,
 				08BB13A51F45E2C70041CCAC /* Login.storyboard */,
 				08A3C6891F49BF910042467C /* Plan.storyboard */,
+				080E957F1F4C255600D1BA3C /* Locations.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -494,6 +520,7 @@
 				084F97361F42267B003F418F /* TabBar.storyboard in Resources */,
 				08F75DE91F3E354C0082E665 /* Info.plist in Resources */,
 				08BB13A81F47240F0041CCAC /* GoogleService-Info.plist in Resources */,
+				080E95801F4C255600D1BA3C /* Locations.storyboard in Resources */,
 				08A3C68A1F49BF910042467C /* Plan.storyboard in Resources */,
 				08F75DE51F3E34FC0082E665 /* Assets.xcassets in Resources */,
 				084F973C1F4226B2003F418F /* Settings.storyboard in Resources */,
@@ -566,6 +593,7 @@
 				08BB13A11F45E1990041CCAC /* LoginViewController.swift in Sources */,
 				08BB13951F4383C10041CCAC /* OWMMain.swift in Sources */,
 				08BB139F1F45E1990041CCAC /* LoginInterfaces.swift in Sources */,
+				080E957B1F4C252700D1BA3C /* LocationsViewController.swift in Sources */,
 				084F97511F422A95003F418F /* SettingsWireframe.swift in Sources */,
 				084F97651F422B0C003F418F /* HomeWireframe.swift in Sources */,
 				084F97581F422AD7003F418F /* FavoritesInterfaces.swift in Sources */,
@@ -577,15 +605,18 @@
 				08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */,
 				084F97591F422AD7003F418F /* FavoritesPresenter.swift in Sources */,
 				08BB13921F4382FD0041CCAC /* OWMCity.swift in Sources */,
+				080E95791F4C252700D1BA3C /* LocationsInterfaces.swift in Sources */,
 				08BB13931F4382FD0041CCAC /* OWMWeather.swift in Sources */,
 				084F97641F422B0C003F418F /* HomeViewController.swift in Sources */,
 				08BB13B01F4779F60041CCAC /* PlanInterfaces.swift in Sources */,
 				08F75DF81F3E378E0082E665 /* WireframeInterface.swift in Sources */,
 				08BB13B21F4779F60041CCAC /* PlanViewController.swift in Sources */,
+				080E957C1F4C252700D1BA3C /* LocationsWireframe.swift in Sources */,
 				084F97621F422B0C003F418F /* HomeInterfaces.swift in Sources */,
 				084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */,
 				084F97631F422B0C003F418F /* HomePresenter.swift in Sources */,
 				084F97461F4227D9003F418F /* TabBarWireframe.swift in Sources */,
+				080E95781F4C252700D1BA3C /* LocationsInteractor.swift in Sources */,
 				08F75DF21F3E37150082E665 /* ViewInterface.swift in Sources */,
 				08BB139E1F45E1990041CCAC /* LoginInteractor.swift in Sources */,
 				084F975B1F422AD7003F418F /* FavoritesWireframe.swift in Sources */,
@@ -596,6 +627,7 @@
 				08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */,
 				084F976B1F436987003F418F /* UIColorExtension.swift in Sources */,
 				084F975A1F422AD7003F418F /* FavoritesViewController.swift in Sources */,
+				080E957A1F4C252700D1BA3C /* LocationsPresenter.swift in Sources */,
 				08F75E0A1F3E39C90082E665 /* Constants.swift in Sources */,
 				08F75E081F3E399E0082E665 /* Router.swift in Sources */,
 				084F97611F422B0C003F418F /* HomeInteractor.swift in Sources */,

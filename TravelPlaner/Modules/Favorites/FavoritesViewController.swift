@@ -45,7 +45,7 @@ final class FavoritesViewController: UIViewController {
     }
     
     @objc fileprivate func _newLocationButtonTapped() {
-        
+        presenter.didSelectNavigationAction(action: .newLocation)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -88,7 +88,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

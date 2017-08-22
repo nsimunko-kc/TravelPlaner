@@ -15,6 +15,7 @@ struct Constants {
         static let Settings = "Settings"
         static let Login = "Login"
         static let Plan = "Plan"
+        static let Locations = "Locations"
     }
     
     struct ViewControllerIdentifiers {
@@ -24,6 +25,7 @@ struct Constants {
         static let Settings = "SettingsViewController"
         static let Login = "LoginViewController"
         static let Plan = "PlanViewController"
+        static let Locations = "LocationsViewController"
     }
     
     struct URLs {
