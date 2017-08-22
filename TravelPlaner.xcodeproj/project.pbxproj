@@ -43,6 +43,7 @@
 		08524A8C1F4C386F00FE294D /* LocationsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8B1F4C386F00FE294D /* LocationsHeaderView.swift */; };
 		08524A8E1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */; };
 		08524A901F4C57E700FE294D /* Progressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8F1F4C57E700FE294D /* Progressable.swift */; };
+		08524A931F4C69C000FE294D /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A921F4C69C000FE294D /* SettingsInfoCell.swift */; };
 		08A3C68A1F49BF910042467C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A3C6891F49BF910042467C /* Plan.storyboard */; };
 		08A3C68E1F49E3FD0042467C /* BasicPlanInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3C68D1F49E3FD0042467C /* BasicPlanInfoItem.swift */; };
 		08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB138E1F4382F20041CCAC /* GettyImage.swift */; };
@@ -112,6 +113,7 @@
 		08524A8B1F4C386F00FE294D /* LocationsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsHeaderView.swift; sourceTree = "<group>"; };
 		08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapLocationsResponse.swift; sourceTree = "<group>"; };
 		08524A8F1F4C57E700FE294D /* Progressable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressable.swift; sourceTree = "<group>"; };
+		08524A921F4C69C000FE294D /* SettingsInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A3C6891F49BF910042467C /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		08A3C68D1F49E3FD0042467C /* BasicPlanInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPlanInfoItem.swift; sourceTree = "<group>"; };
@@ -214,6 +216,14 @@
 			isa = PBXGroup;
 			children = (
 				08524A8B1F4C386F00FE294D /* LocationsHeaderView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		08524A911F4C69B200FE294D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				08524A921F4C69C000FE294D /* SettingsInfoCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -456,6 +466,7 @@
 		08F75E0E1F3E3AAC0082E665 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				08524A911F4C69B200FE294D /* Cells */,
 				084F97481F422A95003F418F /* SettingsInteractor.swift */,
 				084F97491F422A95003F418F /* SettingsInterfaces.swift */,
 				084F974A1F422A95003F418F /* SettingsPresenter.swift */,
@@ -661,6 +672,7 @@
 				080E957A1F4C252700D1BA3C /* LocationsPresenter.swift in Sources */,
 				08F75E0A1F3E39C90082E665 /* Constants.swift in Sources */,
 				08F75E081F3E399E0082E665 /* Router.swift in Sources */,
+				08524A931F4C69C000FE294D /* SettingsInfoCell.swift in Sources */,
 				084F97611F422B0C003F418F /* HomeInteractor.swift in Sources */,
 				08BB13A01F45E1990041CCAC /* LoginPresenter.swift in Sources */,
 				08524A901F4C57E700FE294D /* Progressable.swift in Sources */,

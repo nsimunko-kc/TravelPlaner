@@ -11,7 +11,10 @@
 import UIKit
 import GoogleSignIn
 
-enum SettingsItem {
+enum SettingsItem: Int {
+    case info
+    case clearPlans
+    case clearLocations
     case logout
 }
 
@@ -36,6 +39,8 @@ final class SettingsPresenter: NSObject {
     // MARK: - Private functions -
     
     fileprivate func _configureItems() {
+        _sections.append([SettingsItem.info])
+        _sections.append([SettingsItem.clearPlans, SettingsItem.clearLocations])
         _sections.append([SettingsItem.logout])
     }
     
@@ -65,6 +70,12 @@ extension SettingsPresenter: SettingsPresenterInterface {
         let item = _sections[indexPath.section][indexPath.row]
         
         switch item {
+        case .info:
+            break
+        case .clearPlans:
+            break
+        case .clearLocations:
+            break
         case .logout:
             GIDSignIn.sharedInstance().signOut()
             _wireframe.performNavigationAction(action: .logout)

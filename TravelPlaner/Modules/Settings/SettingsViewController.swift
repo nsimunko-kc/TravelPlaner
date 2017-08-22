@@ -10,6 +10,7 @@
 
 import UIKit
 import MRProgress
+import GoogleSignIn
 
 final class SettingsViewController: UIViewController {
 
@@ -88,6 +89,18 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         let item = presenter.item(at: indexPath)
         
         switch item {
+        case .info:
+            let cell: SettingsInfoCell = tableView.dequeueReusableCell(withIdentifier: "SettingsInfoCell", for: indexPath) as! SettingsInfoCell
+            cell.configure(with: GIDSignIn.sharedInstance().currentUser.profile.name)
+            return cell
+        case .clearPlans:
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingsActionCell", for: indexPath)
+            cell.textLabel?.text = "Obriši spremljene planove"
+            return cell
+        case .clearLocations:
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingsActionCell", for: indexPath)
+            cell.textLabel?.text = "Obriši spremljene lokacije"
+            return cell
         case .logout:
             let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath)
             return cell
@@ -101,6 +114,18 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.001
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == SettingsItem.info.rawValue {
+            return 65.0
+        } else {
+            return 44.0
+        }
     }
     
 }
