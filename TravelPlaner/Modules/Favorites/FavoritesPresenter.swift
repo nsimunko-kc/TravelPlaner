@@ -66,6 +66,11 @@ extension FavoritesPresenter: FavoritesPresenterInterface {
         
     }
     
+    func didDeleteItem(at indexPath: IndexPath) {
+        _items.remove(at: indexPath.row)
+        _interactor.storeLocations(_items.map { $0.name })
+    }
+    
     func viewDidLoad() {
         _loadData()
     }

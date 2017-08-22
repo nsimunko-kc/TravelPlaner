@@ -29,7 +29,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="didTapSearchButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="KM9-QS-saR"/>
+                                <action selector="didTapSearchButton" destination="iN0-l3-epB" eventType="touchUpInside" id="iFr-m9-oH0"/>
                             </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ime lokacije" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eQ-yW-SXG">
@@ -39,7 +39,7 @@
                             </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             <connections>
                                 <outlet property="delegate" destination="iN0-l3-epB" id="os4-el-9d2"/>
                             </connections>

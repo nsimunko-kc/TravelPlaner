@@ -37,6 +37,7 @@ protocol FavoritesPresenterInterface: PresenterInterface {
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
     func didSelectItem(at indexPath: IndexPath)
+    func didDeleteItem(at indexPath: IndexPath)
     func item(at indexPath: IndexPath) -> LocationItem
 }
 
@@ -44,4 +45,5 @@ protocol FavoritesPresenterInterface: PresenterInterface {
 
 protocol FavoritesInteractorInterface: InteractorInterface {
     func loadLocations() -> [String]?
+    func storeLocations(_ locations: [String])
 }

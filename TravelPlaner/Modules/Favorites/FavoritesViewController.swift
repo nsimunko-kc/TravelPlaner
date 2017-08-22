@@ -117,4 +117,11 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         return 44.0
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.didDeleteItem(at: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
 }

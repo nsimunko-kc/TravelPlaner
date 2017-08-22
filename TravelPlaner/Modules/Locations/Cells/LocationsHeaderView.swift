@@ -18,7 +18,7 @@ final class LocationsHeaderView: UITableViewHeaderFooterView {
     
     var delegate: LocationsHeaderViewSearchDelegate?
     
-    @IBAction func didTapSearchButton(_ sender: UIButton) {
+    @IBAction func didTapSearchButton() {
         guard let text = textField.text else {
             return
         }
@@ -30,4 +30,12 @@ final class LocationsHeaderView: UITableViewHeaderFooterView {
 }
 
 extension LocationsHeaderView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        didTapSearchButton()
+        return true
+    }
+    
+    
+    
 }

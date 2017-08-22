@@ -24,4 +24,8 @@ extension FavoritesInteractor: FavoritesInteractorInterface {
         return UserDefaults.standard.stringArray(forKey: Constants.UserDefaultsKeys.FavoriteLocations)
     }
     
+    func storeLocations(_ locations: [String]) {
+        UserDefaults.standard.set(locations, forKey: Constants.UserDefaultsKeys.FavoriteLocations)
+    }
+    
 }
