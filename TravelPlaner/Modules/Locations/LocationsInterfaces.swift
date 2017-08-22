@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Alamofire
 
 // MARK: - Navigation -
 
@@ -24,16 +25,23 @@ protocol LocationsWireframeInterface: WireframeInterface {
 
 // MARK: - Locations View Interface -
 
-protocol LocationsViewInterface: ViewInterface {
+protocol LocationsViewInterface: ViewInterface, Progressable {
+    func reloadData()
 }
 
 // MARK: - Locations Presenter Interface -
 
 protocol LocationsPresenterInterface: PresenterInterface {
     func didSelectNavigationAction(action: LocationsNavigationAction)
+    func numberOfSections() -> Int
+    func numberOfRows(in section: Int) -> Int
+    func item(at indexPath: IndexPath) -> LocationItem
+    func didSelectItem(at indexPath: IndexPath)
+    func didTapSearch(for location: String)
 }
 
 // MARK: - Locations Interactor Interface -
 
 protocol LocationsInteractorInterface: InteractorInterface {
+    func getLocations(_ searchText: String, completion: @escaping ((Result<(OpenWeatherMapLocationsResponse)>) -> ()))
 }

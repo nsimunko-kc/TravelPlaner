@@ -9,6 +9,11 @@
 //
 
 import UIKit
+import MRProgress
+
+struct LocationItem {
+    let name: String
+}
 
 final class LocationsPresenter: NSObject {
     
@@ -17,6 +22,8 @@ final class LocationsPresenter: NSObject {
     fileprivate weak var _view: LocationsViewInterface?
     fileprivate var _interactor: LocationsInteractorInterface
     fileprivate var _wireframe: LocationsWireframeInterface
+    
+    fileprivate var _items = [LocationItem]()
     
     // MARK: - Lifecycle -
     
@@ -36,6 +43,39 @@ extension LocationsPresenter: LocationsPresenterInterface {
     
     func didSelectNavigationAction(action: LocationsNavigationAction) {
         _wireframe.performNavigationAction(action: action)
+    }
+    
+    func numberOfSections() -> Int {
+        return 1
+    }
+    
+    func numberOfRows(in section: Int) -> Int {
+        return _items.count
+    }
+    
+    func item(at indexPath: IndexPath) -> LocationItem {
+        return _items[indexPath.row]
+    }
+    
+    func didSelectItem(at indexPath: IndexPath) {
+        
+    }
+    
+    func didTapSearch(for location: String) {
+        _view?.showLoading()
+        _items.removeAll()
+        
+        _interactor.getLocations(location) { [weak self] result in
+            switch result {
+            case .success(let locationsResponse):
+                self?._view?.hideLoading()
+                self?._items.append(LocationItem(name: "\(locationsResponse.name), \(locationsResponse.countryCode)"))
+                self?._view?.reloadData()
+            case .failure(let error):
+                self?._view?.hideLoadingWithError()
+                print("\(error.localizedDescription)")
+            }
+        }
     }
     
 }

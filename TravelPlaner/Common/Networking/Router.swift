@@ -74,3 +74,10 @@ enum Router: URLRequestConvertible {
     
     
 }
+
+extension Request {
+    public func debugLog() -> Self {
+        print(self.debugDescription)
+        return self
+    }
+}

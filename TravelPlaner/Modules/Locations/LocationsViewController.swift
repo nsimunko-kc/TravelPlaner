@@ -20,6 +20,8 @@ final class LocationsViewController: UIViewController {
 
     // MARK: - IBOutlets -
     
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
@@ -35,10 +37,67 @@ final class LocationsViewController: UIViewController {
     fileprivate func _configureUI() {
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationItem.title = "Nova lokacija"
+        
+        tableView.register(UINib(nibName: "LocationsHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "LocationsHeaderView")
     }
 }
 
 // MARK: - Extensions -
 
 extension LocationsViewController: LocationsViewInterface {
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+}
+
+extension LocationsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfRows(in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 112.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "LocationsHeaderView") as? LocationsHeaderView {
+                headerView.delegate = self
+                return headerView
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+        let item = presenter.item(at: indexPath)
+        
+        cell.textLabel?.text = item.name
+        
+        return cell
+    }
+    
+}
+
+extension LocationsViewController: LocationsHeaderViewSearchDelegate {
+    
+    func didTapSearch(for location: String) {
+        presenter.didTapSearch(for: location)
+    }
+    
 }

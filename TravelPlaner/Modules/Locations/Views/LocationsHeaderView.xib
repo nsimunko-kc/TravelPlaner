@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LocationsHeaderView" customModule="TravelPlaner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReR-5Q-gIW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtc-Od-8SU">
+                            <rect key="frame" x="12" y="60" width="351" height="40"/>
+                            <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="hhm-M5-fAe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <state key="normal" title="Pretraži">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="didTapSearchButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="KM9-QS-saR"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ime lokacije" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eQ-yW-SXG">
+                            <rect key="frame" x="12" y="12" width="351" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="IA0-Bq-JyX"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                            <connections>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="os4-el-9d2"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="6eQ-yW-SXG" secondAttribute="trailing" constant="12" id="N1c-0S-Qlz"/>
+                        <constraint firstItem="Dtc-Od-8SU" firstAttribute="leading" secondItem="ReR-5Q-gIW" secondAttribute="leading" constant="12" id="OhJ-AR-O2h"/>
+                        <constraint firstItem="Dtc-Od-8SU" firstAttribute="top" secondItem="6eQ-yW-SXG" secondAttribute="bottom" constant="8" id="TBV-dA-3wH"/>
+                        <constraint firstItem="6eQ-yW-SXG" firstAttribute="top" secondItem="ReR-5Q-gIW" secondAttribute="top" constant="12" id="jL2-h3-GDm"/>
+                        <constraint firstItem="6eQ-yW-SXG" firstAttribute="leading" secondItem="ReR-5Q-gIW" secondAttribute="leading" constant="12" id="yBZ-z0-HQG"/>
+                        <constraint firstAttribute="trailing" secondItem="Dtc-Od-8SU" secondAttribute="trailing" constant="12" id="yMy-dW-HnV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ReR-5Q-gIW" secondAttribute="trailing" id="849-fu-559"/>
+                <constraint firstItem="ReR-5Q-gIW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DM0-sW-dYL"/>
+                <constraint firstItem="ReR-5Q-gIW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tqc-cB-MCV"/>
+                <constraint firstAttribute="bottom" secondItem="ReR-5Q-gIW" secondAttribute="bottom" id="dcX-QF-N6W"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="textField" destination="6eQ-yW-SXG" id="HNg-29-tCO"/>
+            </connections>
+            <point key="canvasLocation" x="35.5" y="50.5"/>
+        </view>
+    </objects>
+</document>

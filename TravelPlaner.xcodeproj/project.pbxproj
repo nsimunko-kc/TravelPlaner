@@ -39,6 +39,10 @@
 		084F97651F422B0C003F418F /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97601F422B0C003F418F /* HomeWireframe.swift */; };
 		084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */; };
 		084F976B1F436987003F418F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F976A1F436987003F418F /* UIColorExtension.swift */; };
+		08524A8A1F4C385F00FE294D /* LocationsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08524A891F4C385F00FE294D /* LocationsHeaderView.xib */; };
+		08524A8C1F4C386F00FE294D /* LocationsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8B1F4C386F00FE294D /* LocationsHeaderView.swift */; };
+		08524A8E1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */; };
+		08524A901F4C57E700FE294D /* Progressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8F1F4C57E700FE294D /* Progressable.swift */; };
 		08A3C68A1F49BF910042467C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A3C6891F49BF910042467C /* Plan.storyboard */; };
 		08A3C68E1F49E3FD0042467C /* BasicPlanInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3C68D1F49E3FD0042467C /* BasicPlanInfoItem.swift */; };
 		08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB138E1F4382F20041CCAC /* GettyImage.swift */; };
@@ -104,6 +108,10 @@
 		084F97601F422B0C003F418F /* HomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
 		084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemConfigurable.swift; sourceTree = "<group>"; };
 		084F976A1F436987003F418F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		08524A891F4C385F00FE294D /* LocationsHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationsHeaderView.xib; sourceTree = "<group>"; };
+		08524A8B1F4C386F00FE294D /* LocationsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsHeaderView.swift; sourceTree = "<group>"; };
+		08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapLocationsResponse.swift; sourceTree = "<group>"; };
+		08524A8F1F4C57E700FE294D /* Progressable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressable.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A3C6891F49BF910042467C /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		08A3C68D1F49E3FD0042467C /* BasicPlanInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPlanInfoItem.swift; sourceTree = "<group>"; };
@@ -154,6 +162,8 @@
 		080E95721F4C24F200D1BA3C /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				08524A881F4C385000FE294D /* Cells */,
+				08524A871F4C384600FE294D /* Views */,
 				080E95731F4C252700D1BA3C /* LocationsInteractor.swift */,
 				080E95741F4C252700D1BA3C /* LocationsInterfaces.swift */,
 				080E95751F4C252700D1BA3C /* LocationsPresenter.swift */,
@@ -179,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				084F97671F422F2C003F418F /* TabBarItemConfigurable.swift */,
+				08524A8F1F4C57E700FE294D /* Progressable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -189,6 +200,22 @@
 				084F976A1F436987003F418F /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		08524A871F4C384600FE294D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08524A891F4C385F00FE294D /* LocationsHeaderView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		08524A881F4C385000FE294D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				08524A8B1F4C386F00FE294D /* LocationsHeaderView.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		086624D91F3E292700B0B16E = {
@@ -256,6 +283,7 @@
 				08BB13911F4382FD0041CCAC /* OWMWeather.swift */,
 				08BB13941F4383C10041CCAC /* OWMMain.swift */,
 				08BB13961F4385490041CCAC /* OWMWind.swift */,
+				08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */,
 			);
 			path = OpenWeatherMap;
 			sourceTree = "<group>";
@@ -517,6 +545,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08524A8A1F4C385F00FE294D /* LocationsHeaderView.xib in Resources */,
 				084F97361F42267B003F418F /* TabBar.storyboard in Resources */,
 				08F75DE91F3E354C0082E665 /* Info.plist in Resources */,
 				08BB13A81F47240F0041CCAC /* GoogleService-Info.plist in Resources */,
@@ -586,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08524A8C1F4C386F00FE294D /* LocationsHeaderView.swift in Sources */,
 				084F974D1F422A95003F418F /* SettingsInteractor.swift in Sources */,
 				084F97441F4227D9003F418F /* TabBarPresenter.swift in Sources */,
 				084F97421F4227D9003F418F /* TabBarInteractor.swift in Sources */,
@@ -620,6 +650,7 @@
 				08F75DF21F3E37150082E665 /* ViewInterface.swift in Sources */,
 				08BB139E1F45E1990041CCAC /* LoginInteractor.swift in Sources */,
 				084F975B1F422AD7003F418F /* FavoritesWireframe.swift in Sources */,
+				08524A8E1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift in Sources */,
 				084F97571F422AD7003F418F /* FavoritesInteractor.swift in Sources */,
 				08BB13971F4385490041CCAC /* OWMWind.swift in Sources */,
 				08BB13AF1F4779F60041CCAC /* PlanInteractor.swift in Sources */,
@@ -632,6 +663,7 @@
 				08F75E081F3E399E0082E665 /* Router.swift in Sources */,
 				084F97611F422B0C003F418F /* HomeInteractor.swift in Sources */,
 				08BB13A01F45E1990041CCAC /* LoginPresenter.swift in Sources */,
+				08524A901F4C57E700FE294D /* Progressable.swift in Sources */,
 				08F75DF41F3E372C0082E665 /* PresenterInterface.swift in Sources */,
 				084F974F1F422A95003F418F /* SettingsPresenter.swift in Sources */,
 				08BB13A21F45E1990041CCAC /* LoginWireframe.swift in Sources */,
