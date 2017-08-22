@@ -19,4 +19,9 @@ final class FavoritesInteractor: NSObject {
 // MARK: - Extensions -
 
 extension FavoritesInteractor: FavoritesInteractorInterface {
+    
+    func loadLocations() -> [String]? {
+        return UserDefaults.standard.stringArray(forKey: Constants.UserDefaultsKeys.FavoriteLocations)
+    }
+    
 }

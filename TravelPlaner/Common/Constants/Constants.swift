@@ -33,6 +33,10 @@ struct Constants {
     }
     
     struct UserDefaultsKeys {
+        static let FavoriteLocations = "FavoriteLocations"
+    }
+    
+    struct ReuseIdentifiers {
         
     }
     

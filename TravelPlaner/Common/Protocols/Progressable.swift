@@ -11,7 +11,6 @@ import MRProgress
 protocol Progressable {
     func showLoading()
     func hideLoading()
-    func hideLoadingWithError()
 }
 
 extension Progressable where Self: UIViewController {

@@ -44,4 +44,5 @@ protocol LocationsPresenterInterface: PresenterInterface {
 
 protocol LocationsInteractorInterface: InteractorInterface {
     func getLocations(_ searchText: String, completion: @escaping ((Result<(OpenWeatherMapLocationsResponse)>) -> ()))
+    func store(location: String)
 }

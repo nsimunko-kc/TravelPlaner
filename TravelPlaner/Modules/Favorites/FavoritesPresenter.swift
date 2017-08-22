@@ -18,6 +18,8 @@ final class FavoritesPresenter: NSObject {
     fileprivate var _interactor: FavoritesInteractorInterface
     fileprivate var _wireframe: FavoritesWireframeInterface
     
+    fileprivate var _items = [LocationItem]()
+    
     // MARK: - Lifecycle -
     
     init (wireframe: FavoritesWireframeInterface, view: FavoritesViewInterface, interactor: FavoritesInteractorInterface) {
@@ -27,6 +29,16 @@ final class FavoritesPresenter: NSObject {
     }
 
     // MARK: - Private functions -
+    
+    fileprivate func _loadData() {
+        _items.removeAll()
+        if let locations = _interactor.loadLocations() {
+            for location in locations {
+                _items.append(LocationItem(name: location))
+            }
+        }
+        _view?.reloadData()
+    }
     
 }
 
@@ -39,15 +51,15 @@ extension FavoritesPresenter: FavoritesPresenterInterface {
     }
     
     func numberOfSections() -> Int {
-        return 0
+        return 1
     }
     
     func numberOfRows(in section: Int) -> Int {
-        return 0
+        return _items.count
     }
     
-    func item(at indexPath: IndexPath) {
-        
+    func item(at indexPath: IndexPath) -> LocationItem {
+        return _items[indexPath.row]
     }
     
     func didSelectItem(at indexPath: IndexPath) {
@@ -55,7 +67,11 @@ extension FavoritesPresenter: FavoritesPresenterInterface {
     }
     
     func viewDidLoad() {
-        
+        _loadData()
+    }
+    
+    func viewWillAppear(_ animated: Bool) {
+        _loadData()
     }
     
 }

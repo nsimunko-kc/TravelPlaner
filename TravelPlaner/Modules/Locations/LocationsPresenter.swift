@@ -58,7 +58,9 @@ extension LocationsPresenter: LocationsPresenterInterface {
     }
     
     func didSelectItem(at indexPath: IndexPath) {
-        
+        _interactor.store(location: _items[indexPath.row].name)
+        _items.removeAll()
+        _view?.reloadData()
     }
     
     func didTapSearch(for location: String) {
@@ -72,7 +74,7 @@ extension LocationsPresenter: LocationsPresenterInterface {
                 self?._items.append(LocationItem(name: "\(locationsResponse.name), \(locationsResponse.countryCode)"))
                 self?._view?.reloadData()
             case .failure(let error):
-                self?._view?.hideLoadingWithError()
+                self?._view?.hideLoading()
                 print("\(error.localizedDescription)")
             }
         }

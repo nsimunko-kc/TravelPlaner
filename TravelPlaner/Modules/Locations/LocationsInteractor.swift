@@ -35,4 +35,20 @@ extension LocationsInteractor: LocationsInteractorInterface {
         }
     }
     
+    func store(location: String) {
+        var locations: [String]
+        
+        if let _locations = UserDefaults.standard.stringArray(forKey: Constants.UserDefaultsKeys.FavoriteLocations) {
+            locations = _locations
+        } else {
+            locations = []
+        }
+        
+        if !locations.contains(location) {
+            locations.append(location)
+        }
+        
+        UserDefaults.standard.set(locations, forKey: Constants.UserDefaultsKeys.FavoriteLocations)
+    }
+    
 }

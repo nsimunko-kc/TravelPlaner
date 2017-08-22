@@ -31,6 +31,19 @@ final class FavoritesViewController: UIViewController {
         
         _configureUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear(animated)
+        
+        if presenter.numberOfRows(in: 0) > 0 {
+            placeholderView.isHidden = true
+            tableView.isHidden = false
+        } else {
+            placeholderView.isHidden = false
+            tableView.isHidden = true
+        }
+    }
 
     // MARK: - IBActions -
 
@@ -58,7 +71,7 @@ final class FavoritesViewController: UIViewController {
 extension FavoritesViewController: FavoritesViewInterface {
     
     func reloadData() {
-        
+        tableView.reloadData()
     }
     
 }
@@ -88,7 +101,12 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+        let item = presenter.item(at: indexPath)
+        
+        cell.textLabel?.text = item.name
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
