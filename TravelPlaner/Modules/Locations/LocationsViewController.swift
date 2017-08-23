@@ -38,7 +38,7 @@ final class LocationsViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationItem.title = "Nova lokacija"
         
-        tableView.register(UINib(nibName: "LocationsHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "LocationsHeaderView")
+        tableView.register(UINib(nibName: "LocationsHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: Constants.ReuseIdentifiers.HeaderViews.LocationsHeaderView)
     }
 }
 
@@ -68,7 +68,7 @@ extension LocationsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "LocationsHeaderView") as? LocationsHeaderView {
+            if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.ReuseIdentifiers.HeaderViews.LocationsHeaderView) as? LocationsHeaderView {
                 headerView.delegate = self
                 return headerView
             } else {
@@ -84,7 +84,7 @@ extension LocationsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ReuseIdentifiers.TableViewCells.FavoritesLocationCell, for: indexPath)
         let item = presenter.item(at: indexPath)
         
         cell.textLabel?.text = item.name

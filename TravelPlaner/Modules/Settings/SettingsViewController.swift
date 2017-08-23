@@ -90,19 +90,19 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch item {
         case .info:
-            let cell: SettingsInfoCell = tableView.dequeueReusableCell(withIdentifier: "SettingsInfoCell", for: indexPath) as! SettingsInfoCell
+            let cell: SettingsInfoCell = tableView.dequeueReusableCell(withIdentifier: Constants.ReuseIdentifiers.TableViewCells.SettingsInfoCell, for: indexPath) as! SettingsInfoCell
             cell.configure(with: GIDSignIn.sharedInstance().currentUser.profile.name)
             return cell
         case .clearPlans:
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingsActionCell", for: indexPath)
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.ReuseIdentifiers.TableViewCells.SettingsActionCell, for: indexPath)
             cell.textLabel?.text = "Obriši spremljene planove"
             return cell
         case .clearLocations:
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingsActionCell", for: indexPath)
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.ReuseIdentifiers.TableViewCells.SettingsActionCell, for: indexPath)
             cell.textLabel?.text = "Obriši spremljene lokacije"
             return cell
         case .logout:
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath)
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.ReuseIdentifiers.TableViewCells.SettingsLogoutCell, for: indexPath)
             return cell
         }
     }

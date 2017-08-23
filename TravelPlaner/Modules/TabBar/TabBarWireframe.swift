@@ -56,7 +56,6 @@ final class TabBarWireframe: NSObject {
         let interactor = TabBarInteractor()
         let presenter = TabBarPresenter(wireframe: self, view: viewController, interactor: interactor)
         viewController.presenter = presenter
-        self.viewController = viewController
     }
 
 }

@@ -60,11 +60,45 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let item = presenter.item(for: indexPath)
+        let cell: UITableViewCell
+        let cellIdentifier: String
+        
+        switch item {
+        case .dateItem:
+            cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanDateCell
+            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanDateCell
+        case .locationItem:
+            cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanLocationCell
+            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanLocationCell
+        case .forecastItem:
+            cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanForecastCell
+            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanForecastCell
+        case .galleryItem:
+            cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanGalleryCell
+            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanGalleryCell
+        }
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 44.0 : 0.001
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let item = presenter.item(for: indexPath)
+        
+        switch item {
+        case .dateItem:
+            return 114.0
+        case .locationItem:
+            return 82.0
+        case .forecastItem:
+            return 108.0
+        case .galleryItem:
+            return 153.0
+        }
     }
     
 }

@@ -14,7 +14,7 @@ enum PlanItem {
     case dateItem
     case locationItem
     case forecastItem
-    case imageItem
+    case galleryItem
 }
 
 final class PlanPresenter: NSObject {
@@ -29,6 +29,8 @@ final class PlanPresenter: NSObject {
     
     fileprivate var _didSetLocation = false
     
+    fileprivate var _items = [PlanItem]()
+    
     // MARK: - Lifecycle -
     
     init (wireframe: PlanWireframeInterface, view: PlanViewInterface, interactor: PlanInteractorInterface, planInfoItem: BasicPlanInfoItem? = nil) {
@@ -36,6 +38,8 @@ final class PlanPresenter: NSObject {
         _view = view
         _interactor = interactor
         _plan = planInfoItem
+        
+        
     }
 
     // MARK: - Private functions -

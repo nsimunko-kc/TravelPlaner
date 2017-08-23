@@ -37,7 +37,21 @@ struct Constants {
     }
     
     struct ReuseIdentifiers {
+        struct TableViewCells {
+            static let PlanDateCell = "PlanDateCell"
+            static let PlanLocationCell = "PlanLocationCell"
+            static let PlanForecastCell = "PlanForecastCell"
+            static let PlanGalleryCell = "PlanGalleryCell"
+            static let PlanSaveButtonCell = "PlanSaveButtonCell"
+            static let FavoritesLocationCell = "LocationCell"
+            static let SettingsInfoCell = "SettingsInfoCell"
+            static let SettingsActionCell = "SettingsActionCell"
+            static let SettingsLogoutCell = "LogoutCell"
+        }
         
+        struct HeaderViews {
+            static let LocationsHeaderView = "LocationsHeaderView"
+        }
     }
     
 }

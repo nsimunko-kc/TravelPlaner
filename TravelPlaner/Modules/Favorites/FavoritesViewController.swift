@@ -101,7 +101,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ReuseIdentifiers.TableViewCells.FavoritesLocationCell, for: indexPath)
         let item = presenter.item(at: indexPath)
         
         cell.textLabel?.text = item.name

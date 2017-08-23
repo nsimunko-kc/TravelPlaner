@@ -44,6 +44,11 @@
 		08524A8E1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */; };
 		08524A901F4C57E700FE294D /* Progressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8F1F4C57E700FE294D /* Progressable.swift */; };
 		08524A931F4C69C000FE294D /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A921F4C69C000FE294D /* SettingsInfoCell.swift */; };
+		087F80F41F4DCE90009AFD4F /* PlanDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F31F4DCE90009AFD4F /* PlanDateCell.swift */; };
+		087F80F61F4DCEBC009AFD4F /* PlanLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F51F4DCEBC009AFD4F /* PlanLocationCell.swift */; };
+		087F80F81F4DCEE8009AFD4F /* PlanForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F71F4DCEE8009AFD4F /* PlanForecastCell.swift */; };
+		087F80FA1F4DCF13009AFD4F /* PlanGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F91F4DCF13009AFD4F /* PlanGalleryCell.swift */; };
+		087F80FC1F4DCF46009AFD4F /* PlanSaveButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80FB1F4DCF46009AFD4F /* PlanSaveButtonCell.swift */; };
 		08A3C68A1F49BF910042467C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A3C6891F49BF910042467C /* Plan.storyboard */; };
 		08A3C68E1F49E3FD0042467C /* BasicPlanInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3C68D1F49E3FD0042467C /* BasicPlanInfoItem.swift */; };
 		08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB138E1F4382F20041CCAC /* GettyImage.swift */; };
@@ -115,6 +120,11 @@
 		08524A8F1F4C57E700FE294D /* Progressable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressable.swift; sourceTree = "<group>"; };
 		08524A921F4C69C000FE294D /* SettingsInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		087F80F31F4DCE90009AFD4F /* PlanDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDateCell.swift; sourceTree = "<group>"; };
+		087F80F51F4DCEBC009AFD4F /* PlanLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanLocationCell.swift; sourceTree = "<group>"; };
+		087F80F71F4DCEE8009AFD4F /* PlanForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanForecastCell.swift; sourceTree = "<group>"; };
+		087F80F91F4DCF13009AFD4F /* PlanGalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanGalleryCell.swift; sourceTree = "<group>"; };
+		087F80FB1F4DCF46009AFD4F /* PlanSaveButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanSaveButtonCell.swift; sourceTree = "<group>"; };
 		08A3C6891F49BF910042467C /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		08A3C68D1F49E3FD0042467C /* BasicPlanInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPlanInfoItem.swift; sourceTree = "<group>"; };
 		08BB138E1F4382F20041CCAC /* GettyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImage.swift; sourceTree = "<group>"; };
@@ -267,6 +277,11 @@
 		08A3C68C1F49C3680042467C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				087F80F31F4DCE90009AFD4F /* PlanDateCell.swift */,
+				087F80F51F4DCEBC009AFD4F /* PlanLocationCell.swift */,
+				087F80F71F4DCEE8009AFD4F /* PlanForecastCell.swift */,
+				087F80F91F4DCF13009AFD4F /* PlanGalleryCell.swift */,
+				087F80FB1F4DCF46009AFD4F /* PlanSaveButtonCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -641,7 +656,9 @@
 				084F97431F4227D9003F418F /* TabBarInterfaces.swift in Sources */,
 				08F75DF61F3E37750082E665 /* InteractorInterface.swift in Sources */,
 				084F974E1F422A95003F418F /* SettingsInterfaces.swift in Sources */,
+				087F80F41F4DCE90009AFD4F /* PlanDateCell.swift in Sources */,
 				08A3C68E1F49E3FD0042467C /* BasicPlanInfoItem.swift in Sources */,
+				087F80FA1F4DCF13009AFD4F /* PlanGalleryCell.swift in Sources */,
 				084F97501F422A95003F418F /* SettingsViewController.swift in Sources */,
 				08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */,
 				084F97591F422AD7003F418F /* FavoritesPresenter.swift in Sources */,
@@ -655,7 +672,9 @@
 				080E957C1F4C252700D1BA3C /* LocationsWireframe.swift in Sources */,
 				084F97621F422B0C003F418F /* HomeInterfaces.swift in Sources */,
 				084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */,
+				087F80FC1F4DCF46009AFD4F /* PlanSaveButtonCell.swift in Sources */,
 				084F97631F422B0C003F418F /* HomePresenter.swift in Sources */,
+				087F80F81F4DCEE8009AFD4F /* PlanForecastCell.swift in Sources */,
 				084F97461F4227D9003F418F /* TabBarWireframe.swift in Sources */,
 				080E95781F4C252700D1BA3C /* LocationsInteractor.swift in Sources */,
 				08F75DF21F3E37150082E665 /* ViewInterface.swift in Sources */,
@@ -678,6 +697,7 @@
 				08524A901F4C57E700FE294D /* Progressable.swift in Sources */,
 				08F75DF41F3E372C0082E665 /* PresenterInterface.swift in Sources */,
 				084F974F1F422A95003F418F /* SettingsPresenter.swift in Sources */,
+				087F80F61F4DCEBC009AFD4F /* PlanLocationCell.swift in Sources */,
 				08BB13A21F45E1990041CCAC /* LoginWireframe.swift in Sources */,
 				08BB13B31F4779F60041CCAC /* PlanWireframe.swift in Sources */,
 			);
