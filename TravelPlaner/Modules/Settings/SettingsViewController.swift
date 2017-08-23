@@ -120,6 +120,21 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         return 0.001
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let item = SettingsItem(rawValue: section) else {
+            return nil
+        }
+        
+        switch item {
+        case .info:
+            return "O meni"
+        case .clearLocations, .clearPlans:
+            return "Brisanje podataka"
+        case .logout:
+            return "Odjava"
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == SettingsItem.info.rawValue {
             return 65.0
