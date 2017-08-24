@@ -79,6 +79,14 @@ extension PlanPresenter: PlanPresenterInterface {
         return _items[indexPath.row]
     }
     
+    func locations() -> [String] {
+        if let locations = _interactor.loadLocations() {
+            return locations
+        } else {
+            return []
+        }
+    }
+    
     func viewDidLoad() {
         _loadData()
     }

@@ -19,4 +19,9 @@ final class PlanInteractor: NSObject {
 // MARK: - Extensions -
 
 extension PlanInteractor: PlanInteractorInterface {
+    
+    func loadLocations() -> [String]? {
+        return UserDefaults.standard.stringArray(forKey: Constants.UserDefaultsKeys.FavoriteLocations)
+    }
+    
 }

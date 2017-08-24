@@ -34,9 +34,11 @@ protocol PlanPresenterInterface: PresenterInterface {
     func numberOfSections() -> Int
     func numberOfItems(in section: Int) -> Int
     func item(for indexPath: IndexPath) -> PlanItem
+    func locations() -> [String]
 }
 
 // MARK: - Plan Interactor Interface -
 
 protocol PlanInteractorInterface: InteractorInterface {
+    func loadLocations() -> [String]?
 }

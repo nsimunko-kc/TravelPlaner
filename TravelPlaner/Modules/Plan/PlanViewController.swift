@@ -69,11 +69,13 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanDateCell
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanDateCell
             cell.configure(with: item)
+            cell.delegate = self
             return cell
         case .locationItem(let item):
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanLocationCell
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanLocationCell
             cell.configure(with: item)
+            cell.locations = presenter.locations()
             return cell
         case .forecastItem(let item):
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanForecastCell
@@ -96,14 +98,26 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch item {
         case .dateItem:
-            return 114.0
+            return 142.0
         case .locationItem:
-            return 82.0
+            return 95.0
         case .forecastItem:
-            return 108.0
+            return 121.0
         case .galleryItem:
             return 153.0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+}
+
+extension PlanViewController: PlanDateCellDelegate {
+    
+    func didSet(startDate: Date, endDate: Date) {
+        print("Start date: \(startDate) - End date: \(endDate)")
     }
     
 }
