@@ -44,6 +44,11 @@
 		08524A8E1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */; };
 		08524A901F4C57E700FE294D /* Progressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A8F1F4C57E700FE294D /* Progressable.swift */; };
 		08524A931F4C69C000FE294D /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08524A921F4C69C000FE294D /* SettingsInfoCell.swift */; };
+		086352DD1F4EEDD3009411BC /* PlanDateCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086352DC1F4EEDD3009411BC /* PlanDateCellItem.swift */; };
+		086352DF1F4EEE16009411BC /* PlanLocationCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086352DE1F4EEE16009411BC /* PlanLocationCellItem.swift */; };
+		086352E11F4EEE47009411BC /* PlanForecastCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086352E01F4EEE47009411BC /* PlanForecastCellItem.swift */; };
+		086352E31F4EEE96009411BC /* DayForecastCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086352E21F4EEE96009411BC /* DayForecastCellItem.swift */; };
+		086352E51F4EF252009411BC /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086352E41F4EF252009411BC /* DateFormatterExtension.swift */; };
 		087F80F41F4DCE90009AFD4F /* PlanDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F31F4DCE90009AFD4F /* PlanDateCell.swift */; };
 		087F80F61F4DCEBC009AFD4F /* PlanLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F51F4DCEBC009AFD4F /* PlanLocationCell.swift */; };
 		087F80F81F4DCEE8009AFD4F /* PlanForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F71F4DCEE8009AFD4F /* PlanForecastCell.swift */; };
@@ -119,6 +124,11 @@
 		08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapLocationsResponse.swift; sourceTree = "<group>"; };
 		08524A8F1F4C57E700FE294D /* Progressable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressable.swift; sourceTree = "<group>"; };
 		08524A921F4C69C000FE294D /* SettingsInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
+		086352DC1F4EEDD3009411BC /* PlanDateCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDateCellItem.swift; sourceTree = "<group>"; };
+		086352DE1F4EEE16009411BC /* PlanLocationCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanLocationCellItem.swift; sourceTree = "<group>"; };
+		086352E01F4EEE47009411BC /* PlanForecastCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanForecastCellItem.swift; sourceTree = "<group>"; };
+		086352E21F4EEE96009411BC /* DayForecastCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayForecastCellItem.swift; sourceTree = "<group>"; };
+		086352E41F4EF252009411BC /* DateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		086624E21F3E292700B0B16E /* TravelPlaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPlaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		087F80F31F4DCE90009AFD4F /* PlanDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanDateCell.swift; sourceTree = "<group>"; };
 		087F80F51F4DCEBC009AFD4F /* PlanLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanLocationCell.swift; sourceTree = "<group>"; };
@@ -210,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				084F976A1F436987003F418F /* UIColorExtension.swift */,
+				086352E41F4EF252009411BC /* DateFormatterExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +247,17 @@
 				08524A921F4C69C000FE294D /* SettingsInfoCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		086352DB1F4EEDBB009411BC /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				086352DC1F4EEDD3009411BC /* PlanDateCellItem.swift */,
+				086352DE1F4EEE16009411BC /* PlanLocationCellItem.swift */,
+				086352E01F4EEE47009411BC /* PlanForecastCellItem.swift */,
+				086352E21F4EEE96009411BC /* DayForecastCellItem.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		086624D91F3E292700B0B16E = {
@@ -265,13 +287,6 @@
 				08F75DE11F3E34100082E665 /* Resources */,
 			);
 			path = TravelPlaner;
-			sourceTree = "<group>";
-		};
-		08A3C68B1F49C3600042467C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		08A3C68C1F49C3680042467C /* Cells */ = {
@@ -328,8 +343,8 @@
 		08BB13A91F4779D90041CCAC /* Plan */ = {
 			isa = PBXGroup;
 			children = (
+				086352DB1F4EEDBB009411BC /* Items */,
 				08A3C68C1F49C3680042467C /* Cells */,
-				08A3C68B1F49C3600042467C /* Views */,
 				08BB13AA1F4779F60041CCAC /* PlanInteractor.swift */,
 				08BB13AB1F4779F60041CCAC /* PlanInterfaces.swift */,
 				08BB13AC1F4779F60041CCAC /* PlanPresenter.swift */,
@@ -665,10 +680,12 @@
 				08BB13921F4382FD0041CCAC /* OWMCity.swift in Sources */,
 				080E95791F4C252700D1BA3C /* LocationsInterfaces.swift in Sources */,
 				08BB13931F4382FD0041CCAC /* OWMWeather.swift in Sources */,
+				086352E31F4EEE96009411BC /* DayForecastCellItem.swift in Sources */,
 				084F97641F422B0C003F418F /* HomeViewController.swift in Sources */,
 				08BB13B01F4779F60041CCAC /* PlanInterfaces.swift in Sources */,
 				08F75DF81F3E378E0082E665 /* WireframeInterface.swift in Sources */,
 				08BB13B21F4779F60041CCAC /* PlanViewController.swift in Sources */,
+				086352E11F4EEE47009411BC /* PlanForecastCellItem.swift in Sources */,
 				080E957C1F4C252700D1BA3C /* LocationsWireframe.swift in Sources */,
 				084F97621F422B0C003F418F /* HomeInterfaces.swift in Sources */,
 				084F97681F422F2C003F418F /* TabBarItemConfigurable.swift in Sources */,
@@ -677,6 +694,7 @@
 				087F80F81F4DCEE8009AFD4F /* PlanForecastCell.swift in Sources */,
 				084F97461F4227D9003F418F /* TabBarWireframe.swift in Sources */,
 				080E95781F4C252700D1BA3C /* LocationsInteractor.swift in Sources */,
+				086352E51F4EF252009411BC /* DateFormatterExtension.swift in Sources */,
 				08F75DF21F3E37150082E665 /* ViewInterface.swift in Sources */,
 				08BB139E1F45E1990041CCAC /* LoginInteractor.swift in Sources */,
 				084F975B1F422AD7003F418F /* FavoritesWireframe.swift in Sources */,
@@ -694,12 +712,14 @@
 				08524A931F4C69C000FE294D /* SettingsInfoCell.swift in Sources */,
 				084F97611F422B0C003F418F /* HomeInteractor.swift in Sources */,
 				08BB13A01F45E1990041CCAC /* LoginPresenter.swift in Sources */,
+				086352DD1F4EEDD3009411BC /* PlanDateCellItem.swift in Sources */,
 				08524A901F4C57E700FE294D /* Progressable.swift in Sources */,
 				08F75DF41F3E372C0082E665 /* PresenterInterface.swift in Sources */,
 				084F974F1F422A95003F418F /* SettingsPresenter.swift in Sources */,
 				087F80F61F4DCEBC009AFD4F /* PlanLocationCell.swift in Sources */,
 				08BB13A21F45E1990041CCAC /* LoginWireframe.swift in Sources */,
 				08BB13B31F4779F60041CCAC /* PlanWireframe.swift in Sources */,
+				086352DF1F4EEE16009411BC /* PlanLocationCellItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

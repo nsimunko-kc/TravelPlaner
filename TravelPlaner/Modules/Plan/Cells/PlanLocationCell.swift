@@ -21,8 +21,8 @@ class PlanLocationCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func configure() {
-        
+    func configure(with item: PlanLocationCellItem) {
+        textField.text = item.location
     }
 
 }

@@ -22,8 +22,9 @@ class PlanDateCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func configure() {
-        
+    func configure(with item: PlanDateCellItem) {
+        startDateTextField.text = DateFormatter.shared.string(from: item.startDate, withFormat: DateFormat.defaultFormat)
+        endDateTextField.text = DateFormatter.shared.string(from: item.endDate, withFormat: DateFormat.defaultFormat)
     }
 
 }

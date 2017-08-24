@@ -11,9 +11,9 @@
 import UIKit
 
 enum PlanItem {
-    case dateItem
-    case locationItem
-    case forecastItem
+    case dateItem(PlanDateCellItem)
+    case locationItem(PlanLocationCellItem)
+    case forecastItem(PlanForecastCellItem)
     case galleryItem
 }
 
@@ -38,11 +38,24 @@ final class PlanPresenter: NSObject {
         _view = view
         _interactor = interactor
         _plan = planInfoItem
-        
-        
     }
 
     // MARK: - Private functions -
+    
+    fileprivate func _loadData() {
+        _items.removeAll()
+        
+        if let plan = _plan {
+            _items.append(PlanItem.dateItem(PlanDateCellItem(startDate: plan.dateFrom, endDate: plan.dateTo)))
+            _items.append(PlanItem.locationItem(PlanLocationCellItem(location: plan.location)))
+            
+            // Fetch weather forecast data from OWM api
+            
+        } else {
+            _items.append(PlanItem.dateItem(PlanDateCellItem(startDate: Date(), endDate: Date())))
+            _items.append(PlanItem.locationItem(PlanLocationCellItem(location: "")))
+        }
+    }
     
 }
 
@@ -55,15 +68,19 @@ extension PlanPresenter: PlanPresenterInterface {
     }
     
     func numberOfSections() -> Int {
-        return 0
+        return 1
     }
     
     func numberOfItems(in section: Int) -> Int {
-        return 0
+        return _items.count
     }
     
     func item(for indexPath: IndexPath) -> PlanItem {
-        return PlanItem.dateItem
+        return _items[indexPath.row]
+    }
+    
+    func viewDidLoad() {
+        _loadData()
     }
     
 }

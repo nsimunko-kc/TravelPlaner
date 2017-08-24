@@ -8,17 +8,11 @@
 
 import UIKit
 
-struct ForecastItem {
-    let day: String
-    let weather: String
-    let temp: Double
-}
-
 class PlanForecastCell: UITableViewCell {
 
     @IBOutlet weak var forecastCollectionView: UICollectionView!
     
-    fileprivate var _items = [ForecastItem]()
+    fileprivate var _items = [DayForecastCellItem]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,8 +23,8 @@ class PlanForecastCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func configure(with items: [ForecastItem]) {
-        _items = items
+    func configure(with item: PlanForecastCellItem) {
+        _items = item.forecast
     }
 
 }

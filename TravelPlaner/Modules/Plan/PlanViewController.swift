@@ -26,6 +26,7 @@ final class PlanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
         
         _configureUI()
     }
