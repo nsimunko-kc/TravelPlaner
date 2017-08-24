@@ -62,25 +62,29 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = presenter.item(for: indexPath)
-        let cell: UITableViewCell
         let cellIdentifier: String
         
         switch item {
-        case .dateItem:
+        case .dateItem(let item):
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanDateCell
-            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanDateCell
-        case .locationItem:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanDateCell
+            cell.configure(with: item)
+            return cell
+        case .locationItem(let item):
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanLocationCell
-            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanLocationCell
-        case .forecastItem:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanLocationCell
+            cell.configure(with: item)
+            return cell
+        case .forecastItem(let item):
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanForecastCell
-            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanForecastCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanForecastCell
+            cell.configure(with: item)
+            return cell
         case .galleryItem:
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanGalleryCell
-            cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanGalleryCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanGalleryCell
+            return cell
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
