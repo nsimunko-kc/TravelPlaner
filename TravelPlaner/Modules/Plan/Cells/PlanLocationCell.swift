@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol PlanLocationCellDelegate {
+    func didSet(location: String)
+}
+
 class PlanLocationCell: UITableViewCell {
 
     @IBOutlet weak var textField: UITextField!
     
     var locations = [String]()
+    
+    var delegate: PlanLocationCellDelegate?
     
     fileprivate lazy var _pickerView: UIPickerView = {
         let pickerView = UIPickerView()
@@ -36,6 +42,10 @@ class PlanLocationCell: UITableViewCell {
     
     @objc fileprivate func _locationPickerButtonHandler(_ sender: UIPickerView) {
         textField.resignFirstResponder()
+        
+        if let location = textField.text {
+            delegate?.didSet(location: location)
+        }
     }
 
 }

@@ -76,6 +76,7 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanLocationCell
             cell.configure(with: item)
             cell.locations = presenter.locations()
+            cell.delegate = self
             return cell
         case .forecastItem(let item):
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanForecastCell
@@ -118,6 +119,14 @@ extension PlanViewController: PlanDateCellDelegate {
     
     func didSet(startDate: Date, endDate: Date) {
         print("Start date: \(startDate) - End date: \(endDate)")
+    }
+    
+}
+
+extension PlanViewController: PlanLocationCellDelegate {
+    
+    func didSet(location: String) {
+        print("Location set: \(location)")
     }
     
 }
