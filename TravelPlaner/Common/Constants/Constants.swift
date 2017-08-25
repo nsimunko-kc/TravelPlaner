@@ -51,6 +51,7 @@ struct Constants {
         
         struct CollectionViewCells {
             static let DayForecastCollectionViewCell = "DayForecastCollectionViewCell"
+            static let GalleryImageCollectionViewCell = "GalleryImageCollectionViewCell"
         }
         
         struct HeaderViews {

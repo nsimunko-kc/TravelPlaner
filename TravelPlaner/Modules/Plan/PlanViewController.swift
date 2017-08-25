@@ -92,9 +92,10 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanForecastCell
             cell.configure(with: item)
             return cell
-        case .galleryItem:
+        case .galleryItem(let item):
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanGalleryCell
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanGalleryCell
+            cell.configure(with: item)
             return cell
         case .saveButtonItem:
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanSaveButtonCell
@@ -118,7 +119,7 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
         case .forecastItem:
             return 176.0
         case .galleryItem:
-            return 153.0
+            return 157.0
         case .saveButtonItem:
             return 50.0
         }

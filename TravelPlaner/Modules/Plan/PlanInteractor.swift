@@ -33,7 +33,21 @@ extension PlanInteractor: PlanInteractorInterface {
                 completion(.success(result))
             case let .failure(error):
                 print("API call - getForecast: Failure")
-                print("\(error.localizedDescription)")
+                print(error.localizedDescription)
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getImages(_ location: String, completion: @escaping ((Result<(GettyImagesGalleryResponse)>) -> ())) {
+        Alamofire.request(Router.images(location: location)).debugLog().responseObject { (response: DataResponse<GettyImagesGalleryResponse>) in
+            switch response.result {
+            case let .success(result):
+                print("API call - getImages: Success")
+                completion(.success(result))
+            case let .failure(error):
+                print("API call - getImages: Failure")
+                print(error.localizedDescription)
                 completion(.failure(error))
             }
         }

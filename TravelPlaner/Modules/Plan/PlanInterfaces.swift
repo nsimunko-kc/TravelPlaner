@@ -47,4 +47,5 @@ protocol PlanPresenterInterface: PresenterInterface {
 protocol PlanInteractorInterface: InteractorInterface {
     func loadLocations() -> [String]?
     func getForecast(_ location: String, completion: @escaping ((Result<(OpenWeatherMapForecastResponse)>) -> ()))
+    func getImages(_ location: String, completion: @escaping ((Result<(GettyImagesGalleryResponse)>) -> ()))
 }

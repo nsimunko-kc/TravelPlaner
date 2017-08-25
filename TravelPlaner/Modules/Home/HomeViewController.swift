@@ -43,6 +43,14 @@ final class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.appLightBlue()
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        if presenter.numberOfSections() > 0 {
+            tableView.isHidden = false
+            placeholderView.isHidden = true
+        } else {
+            tableView.isHidden = true
+            placeholderView.isHidden = false
+        }
     }
     
     @objc fileprivate func _newPlanButtonTapped() {

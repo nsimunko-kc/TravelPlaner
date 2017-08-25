@@ -14,7 +14,7 @@ enum PlanItem {
     case dateItem(PlanDateCellItem)
     case locationItem(PlanLocationCellItem)
     case forecastItem(PlanForecastCellItem)
-    case galleryItem
+    case galleryItem(PlanGalleryCellItem)
     case saveButtonItem
 }
 
@@ -29,6 +29,9 @@ final class PlanPresenter: NSObject {
     fileprivate var _plan: BasicPlanInfoItem?
     
     fileprivate var _items = [PlanItem]()
+    
+    fileprivate var _forecast = [DayForecastCellItem]()
+    fileprivate var _gallery = [GettyImage]()
     
     fileprivate var _startDate: Date?
     fileprivate var _endDate: Date?
@@ -47,6 +50,8 @@ final class PlanPresenter: NSObject {
     
     fileprivate func _loadData() {
         _items.removeAll()
+        _forecast.removeAll()
+        _gallery.removeAll()
         
         if let plan = _plan {
             _items.append(PlanItem.dateItem(PlanDateCellItem(startDate: plan.dateFrom, endDate: plan.dateTo)))
@@ -54,15 +59,29 @@ final class PlanPresenter: NSObject {
             
             // Fetch weather forecast data from OWM api
             _view?.showLoading()
+            
             _interactor.getForecast(plan.location) { [weak self] result in
                 switch result {
                 case .success(let forecastResponse):
                     self?._handle(forecastResponse)
                 case .failure(let error):
                     self?._view?.hideLoading()
+                    self?._wireframe.showAlert(title: "Ups", message: "Došlo je do pogreške kod dohvaćanja vremenske prognoze.", actions: nil)
                     print(error.localizedDescription)
                 }
             }
+            
+            _interactor.getImages(plan.location) { [weak self] result in
+                switch result {
+                case .success(let galleryResponse):
+                    self?._handle(galleryResponse)
+                case .failure(let error):
+                    self?._view?.hideLoading()
+                    self?._wireframe.showAlert(title: "Ups", message: "Došlo je do pogreške kod dohvaćanja galerije slika.", actions: nil)
+                    print(error.localizedDescription)
+                }
+            }
+            
             _view?.reloadData()
             
         } else {
@@ -93,16 +112,24 @@ final class PlanPresenter: NSObject {
             }
         }
         
-        _items.append(PlanItem.forecastItem(PlanForecastCellItem(forecast: forecast)))
-        _items.append(PlanItem.galleryItem)
-        _items.append(PlanItem.saveButtonItem)
-        _view?.reloadData()
-        _view?.hideLoading()
+        _forecast = forecast
+        _showResponseData()
     }
     
-//    fileprivate func _handle(_ galleryResponse: GettyImagesGalleryResponse) {
-//        
-//    }
+    fileprivate func _handle(_ galleryResponse: GettyImagesGalleryResponse) {
+        _gallery = galleryResponse.images
+        _showResponseData()
+    }
+    
+    fileprivate func _showResponseData() {
+        if !_forecast.isEmpty && !_gallery.isEmpty {
+            _items.append(PlanItem.forecastItem(PlanForecastCellItem(forecast: _forecast)))
+            _items.append(PlanItem.galleryItem(PlanGalleryCellItem(images: _gallery)))
+            _items.append(PlanItem.saveButtonItem)
+            _view?.reloadData()
+            _view?.hideLoading()
+        }
+    }
     
 }
 

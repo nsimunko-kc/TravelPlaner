@@ -88,6 +88,9 @@
 		08F9C3EC1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3EB1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift */; };
 		08F9C3EE1F504960003B4B2D /* OWMListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3ED1F504960003B4B2D /* OWMListObject.swift */; };
 		08F9C3F01F505CC4003B4B2D /* OWMTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3EF1F505CC4003B4B2D /* OWMTemp.swift */; };
+		08F9C3F21F506B3D003B4B2D /* GettyImagesGalleryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3F11F506B3D003B4B2D /* GettyImagesGalleryResponse.swift */; };
+		08F9C3F41F506EFB003B4B2D /* GalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3F31F506EFB003B4B2D /* GalleryImageCollectionViewCell.swift */; };
+		08F9C3F61F507036003B4B2D /* PlanGalleryCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3F51F507036003B4B2D /* PlanGalleryCellItem.swift */; };
 		F5ED7E2BA91603FF5F972E84 /* Pods_TravelPlaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1836B98865F4D8E38BD8463 /* Pods_TravelPlaner.framework */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +177,9 @@
 		08F9C3EB1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapForecastResponse.swift; sourceTree = "<group>"; };
 		08F9C3ED1F504960003B4B2D /* OWMListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMListObject.swift; sourceTree = "<group>"; };
 		08F9C3EF1F505CC4003B4B2D /* OWMTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMTemp.swift; sourceTree = "<group>"; };
+		08F9C3F11F506B3D003B4B2D /* GettyImagesGalleryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImagesGalleryResponse.swift; sourceTree = "<group>"; };
+		08F9C3F31F506EFB003B4B2D /* GalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		08F9C3F51F507036003B4B2D /* PlanGalleryCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanGalleryCellItem.swift; sourceTree = "<group>"; };
 		A1836B98865F4D8E38BD8463 /* Pods_TravelPlaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelPlaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A440E8CD191CDA47DFCD1A07 /* Pods-TravelPlaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelPlaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelPlaner/Pods-TravelPlaner.debug.xcconfig"; sourceTree = "<group>"; };
 		B99446745764946A3E5A3868 /* Pods-TravelPlaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelPlaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelPlaner/Pods-TravelPlaner.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +272,7 @@
 				086352DE1F4EEE16009411BC /* PlanLocationCellItem.swift */,
 				086352E01F4EEE47009411BC /* PlanForecastCellItem.swift */,
 				086352E21F4EEE96009411BC /* DayForecastCellItem.swift */,
+				08F9C3F51F507036003B4B2D /* PlanGalleryCellItem.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -308,6 +315,7 @@
 				087F80F91F4DCF13009AFD4F /* PlanGalleryCell.swift */,
 				087F80FB1F4DCF46009AFD4F /* PlanSaveButtonCell.swift */,
 				086352E61F4F0AF4009411BC /* DayForecastCollectionViewCell.swift */,
+				08F9C3F31F506EFB003B4B2D /* GalleryImageCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -323,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				08BB138E1F4382F20041CCAC /* GettyImage.swift */,
+				08F9C3F11F506B3D003B4B2D /* GettyImagesGalleryResponse.swift */,
 			);
 			path = GettyImages;
 			sourceTree = "<group>";
@@ -677,6 +686,7 @@
 				084F97421F4227D9003F418F /* TabBarInteractor.swift in Sources */,
 				084F97451F4227D9003F418F /* TabBarViewController.swift in Sources */,
 				08BB13A11F45E1990041CCAC /* LoginViewController.swift in Sources */,
+				08F9C3F21F506B3D003B4B2D /* GettyImagesGalleryResponse.swift in Sources */,
 				08BB13951F4383C10041CCAC /* OWMMain.swift in Sources */,
 				08BB139F1F45E1990041CCAC /* LoginInterfaces.swift in Sources */,
 				080E957B1F4C252700D1BA3C /* LocationsViewController.swift in Sources */,
@@ -690,6 +700,7 @@
 				087F80F41F4DCE90009AFD4F /* PlanDateCell.swift in Sources */,
 				08F9C3F01F505CC4003B4B2D /* OWMTemp.swift in Sources */,
 				08A3C68E1F49E3FD0042467C /* BasicPlanInfoItem.swift in Sources */,
+				08F9C3F41F506EFB003B4B2D /* GalleryImageCollectionViewCell.swift in Sources */,
 				087F80FA1F4DCF13009AFD4F /* PlanGalleryCell.swift in Sources */,
 				084F97501F422A95003F418F /* SettingsViewController.swift in Sources */,
 				08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */,
@@ -731,6 +742,7 @@
 				08F75E081F3E399E0082E665 /* Router.swift in Sources */,
 				08524A931F4C69C000FE294D /* SettingsInfoCell.swift in Sources */,
 				084F97611F422B0C003F418F /* HomeInteractor.swift in Sources */,
+				08F9C3F61F507036003B4B2D /* PlanGalleryCellItem.swift in Sources */,
 				08BB13A01F45E1990041CCAC /* LoginPresenter.swift in Sources */,
 				086352DD1F4EEDD3009411BC /* PlanDateCellItem.swift in Sources */,
 				08524A901F4C57E700FE294D /* Progressable.swift in Sources */,

@@ -12,7 +12,7 @@ class PlanGalleryCell: UITableViewCell {
 
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     
-    fileprivate var _imagePaths = [String]()
+    fileprivate var _images = [GettyImage]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +23,8 @@ class PlanGalleryCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func configure() {
-        
+    func configure(with item: PlanGalleryCellItem) {
+        _images = item.images
     }
 
 }
@@ -36,11 +36,13 @@ extension PlanGalleryCell: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return _imagePaths.count
+        return _images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseIdentifiers.CollectionViewCells.GalleryImageCollectionViewCell, for: indexPath) as! GalleryImageCollectionViewCell
+        cell.configure(with: _images[indexPath.row])
+        return cell
     }
     
 }
