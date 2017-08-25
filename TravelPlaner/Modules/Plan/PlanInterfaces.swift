@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Alamofire
 
 // MARK: - Navigation -
 
@@ -24,7 +25,7 @@ protocol PlanWireframeInterface: WireframeInterface {
 
 // MARK: - Plan View Interface -
 
-protocol PlanViewInterface: ViewInterface {
+protocol PlanViewInterface: ViewInterface, Progressable {
     func reloadData()
     func reloadData(at indexPaths: [IndexPath])
 }
@@ -45,4 +46,5 @@ protocol PlanPresenterInterface: PresenterInterface {
 
 protocol PlanInteractorInterface: InteractorInterface {
     func loadLocations() -> [String]?
+    func getForecast(_ location: String, completion: @escaping ((Result<(OpenWeatherMapForecastResponse)>) -> ()))
 }

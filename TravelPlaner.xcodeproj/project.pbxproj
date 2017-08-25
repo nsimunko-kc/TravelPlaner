@@ -85,6 +85,8 @@
 		08F75E081F3E399E0082E665 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F75E071F3E399E0082E665 /* Router.swift */; };
 		08F75E0A1F3E39C90082E665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F75E091F3E39C90082E665 /* Constants.swift */; };
 		08F9C3EA1F5036AD003B4B2D /* WeatherConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3E91F5036AD003B4B2D /* WeatherConditions.swift */; };
+		08F9C3EC1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3EB1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift */; };
+		08F9C3EE1F504960003B4B2D /* OWMListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3ED1F504960003B4B2D /* OWMListObject.swift */; };
 		F5ED7E2BA91603FF5F972E84 /* Pods_TravelPlaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1836B98865F4D8E38BD8463 /* Pods_TravelPlaner.framework */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +170,8 @@
 		08F75E071F3E399E0082E665 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		08F75E091F3E39C90082E665 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		08F9C3E91F5036AD003B4B2D /* WeatherConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherConditions.swift; sourceTree = "<group>"; };
+		08F9C3EB1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapForecastResponse.swift; sourceTree = "<group>"; };
+		08F9C3ED1F504960003B4B2D /* OWMListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMListObject.swift; sourceTree = "<group>"; };
 		A1836B98865F4D8E38BD8463 /* Pods_TravelPlaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelPlaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A440E8CD191CDA47DFCD1A07 /* Pods-TravelPlaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelPlaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelPlaner/Pods-TravelPlaner.debug.xcconfig"; sourceTree = "<group>"; };
 		B99446745764946A3E5A3868 /* Pods-TravelPlaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelPlaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelPlaner/Pods-TravelPlaner.release.xcconfig"; sourceTree = "<group>"; };
@@ -330,6 +334,8 @@
 				08BB13961F4385490041CCAC /* OWMWind.swift */,
 				08524A8D1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift */,
 				08F9C3E91F5036AD003B4B2D /* WeatherConditions.swift */,
+				08F9C3EB1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift */,
+				08F9C3ED1F504960003B4B2D /* OWMListObject.swift */,
 			);
 			path = OpenWeatherMap;
 			sourceTree = "<group>";
@@ -706,9 +712,11 @@
 				08F75DF21F3E37150082E665 /* ViewInterface.swift in Sources */,
 				08BB139E1F45E1990041CCAC /* LoginInteractor.swift in Sources */,
 				084F975B1F422AD7003F418F /* FavoritesWireframe.swift in Sources */,
+				08F9C3EC1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift in Sources */,
 				08524A8E1F4C49FA00FE294D /* OpenWeatherMapLocationsResponse.swift in Sources */,
 				084F97571F422AD7003F418F /* FavoritesInteractor.swift in Sources */,
 				08BB13971F4385490041CCAC /* OWMWind.swift in Sources */,
+				08F9C3EE1F504960003B4B2D /* OWMListObject.swift in Sources */,
 				08BB13AF1F4779F60041CCAC /* PlanInteractor.swift in Sources */,
 				08BB13B11F4779F60041CCAC /* PlanPresenter.swift in Sources */,
 				08F75DE31F3E34A20082E665 /* AppDelegate.swift in Sources */,

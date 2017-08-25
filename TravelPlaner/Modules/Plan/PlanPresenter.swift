@@ -54,6 +54,18 @@ final class PlanPresenter: NSObject {
             
             // Fetch weather forecast data from OWM api
             _items.append(PlanItem.forecastItem(PlanForecastCellItem(forecast: [])))
+            
+            _view?.showLoading()
+            _interactor.getForecast(plan.location) { [weak self] result in
+                switch result {
+                case .success(let forecastResponse):
+                    break
+                case .failure(let error):
+                    self?._view?.hideLoading()
+                    print(error.localizedDescription)
+                }
+            }
+            
             _items.append(PlanItem.galleryItem)
             _items.append(PlanItem.saveButtonItem)
             
