@@ -34,7 +34,7 @@ extension PlanInteractor: PlanInteractorInterface {
             case let .failure(error):
                 print("API call - getForecast: Failure")
                 print("\(error.localizedDescription)")
-                completion(.failure(result))
+                completion(.failure(error))
             }
         }
     }

@@ -53,22 +53,16 @@ final class PlanPresenter: NSObject {
             _items.append(PlanItem.locationItem(PlanLocationCellItem(location: plan.location)))
             
             // Fetch weather forecast data from OWM api
-            _items.append(PlanItem.forecastItem(PlanForecastCellItem(forecast: [])))
-            
             _view?.showLoading()
             _interactor.getForecast(plan.location) { [weak self] result in
                 switch result {
                 case .success(let forecastResponse):
-                    break
+                    self?._handle(forecastResponse)
                 case .failure(let error):
                     self?._view?.hideLoading()
                     print(error.localizedDescription)
                 }
             }
-            
-            _items.append(PlanItem.galleryItem)
-            _items.append(PlanItem.saveButtonItem)
-            
             _view?.reloadData()
             
         } else {
@@ -87,6 +81,28 @@ final class PlanPresenter: NSObject {
             _loadData()
         }
     }
+    
+    fileprivate func _handle(_ forecastResponse: OpenWeatherMapForecastResponse) {
+        var forecast = [DayForecastCellItem]()
+        
+        for item in forecastResponse.list {
+            if let weatherObject = item.weather.first, let weather = WeatherConditions.getWeatherFrom(apiKey: weatherObject.ID) {
+                forecast.append(DayForecastCellItem(day: weather.title, temp: item.temp.day, weather: weather.title, image: weather.icon))
+            } else {
+                forecast.append(DayForecastCellItem(day: "N/A", temp: 0, weather: "N/A", image: #imageLiteral(resourceName: "weather_mist")))
+            }
+        }
+        
+        _items.append(PlanItem.forecastItem(PlanForecastCellItem(forecast: forecast)))
+        _items.append(PlanItem.galleryItem)
+        _items.append(PlanItem.saveButtonItem)
+        _view?.reloadData()
+        _view?.hideLoading()
+    }
+    
+//    fileprivate func _handle(_ galleryResponse: GettyImagesGalleryResponse) {
+//        
+//    }
     
 }
 

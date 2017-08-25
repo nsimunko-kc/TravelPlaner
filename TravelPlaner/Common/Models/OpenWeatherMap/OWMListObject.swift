@@ -9,15 +9,13 @@
 import Unbox
 
 struct OWMListObject {
-    let main: OWMMain
-    let weather: OWMWeather
-    let wind: OWMWind
+    let temp: OWMTemp
+    let weather: [OWMWeather]
 }
 
 extension OWMListObject: Unboxable {
     init(unboxer: Unboxer) throws {
-        main = try unboxer.unbox(key: "main")
+        temp = try unboxer.unbox(key: "temp")
         weather = try unboxer.unbox(key: "weather")
-        wind = try unboxer.unbox(key: "wind")
     }
 }

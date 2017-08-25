@@ -21,7 +21,7 @@ extension OWMCity: Unboxable {
         ID = try unboxer.unbox(key: "id")
         name = try unboxer.unbox(key: "name")
         country = try unboxer.unbox(key: "country")
-        latitude = try unboxer.unbox(key: "coord.lat")
-        longitude = try unboxer.unbox(key: "coord.lon")
+        latitude = try unboxer.unbox(keyPath: "coord.lat")
+        longitude = try unboxer.unbox(keyPath: "coord.lon")
     }
 }

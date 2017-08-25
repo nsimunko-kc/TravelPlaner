@@ -104,7 +104,7 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 44.0 : 0.001
+        return section == 0 ? 44.0 : 44.0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -116,7 +116,7 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
         case .locationItem:
             return 95.0
         case .forecastItem:
-            return 162.0
+            return 176.0
         case .galleryItem:
             return 153.0
         case .saveButtonItem:

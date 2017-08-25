@@ -16,11 +16,15 @@ class DayForecastCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        dayLabel.text = nil
+        tempLabel.text = nil
+        weatherImageView.image = nil
     }
     
     func configure(with item: DayForecastCellItem) {
-        dayLabel.text = item.name
+        dayLabel.text = item.day
         tempLabel.text = "\(item.temp)˚C"
+        weatherImageView.image = item.image
     }
     
 }

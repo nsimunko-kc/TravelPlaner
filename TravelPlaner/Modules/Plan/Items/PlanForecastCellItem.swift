@@ -9,7 +9,5 @@
 import Foundation
 
 struct PlanForecastCellItem {
-    
     let forecast: [DayForecastCellItem]
-    
 }

@@ -40,7 +40,9 @@ extension PlanForecastCell: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseIdentifiers.CollectionViewCells.DayForecastCollectionViewCell, for: indexPath) as! DayForecastCollectionViewCell
+        cell.configure(with: _items[indexPath.row])
+        return cell
     }
     
 }

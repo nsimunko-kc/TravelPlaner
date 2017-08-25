@@ -87,6 +87,7 @@
 		08F9C3EA1F5036AD003B4B2D /* WeatherConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3E91F5036AD003B4B2D /* WeatherConditions.swift */; };
 		08F9C3EC1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3EB1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift */; };
 		08F9C3EE1F504960003B4B2D /* OWMListObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3ED1F504960003B4B2D /* OWMListObject.swift */; };
+		08F9C3F01F505CC4003B4B2D /* OWMTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F9C3EF1F505CC4003B4B2D /* OWMTemp.swift */; };
 		F5ED7E2BA91603FF5F972E84 /* Pods_TravelPlaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1836B98865F4D8E38BD8463 /* Pods_TravelPlaner.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +173,7 @@
 		08F9C3E91F5036AD003B4B2D /* WeatherConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherConditions.swift; sourceTree = "<group>"; };
 		08F9C3EB1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapForecastResponse.swift; sourceTree = "<group>"; };
 		08F9C3ED1F504960003B4B2D /* OWMListObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMListObject.swift; sourceTree = "<group>"; };
+		08F9C3EF1F505CC4003B4B2D /* OWMTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMTemp.swift; sourceTree = "<group>"; };
 		A1836B98865F4D8E38BD8463 /* Pods_TravelPlaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelPlaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A440E8CD191CDA47DFCD1A07 /* Pods-TravelPlaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelPlaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelPlaner/Pods-TravelPlaner.debug.xcconfig"; sourceTree = "<group>"; };
 		B99446745764946A3E5A3868 /* Pods-TravelPlaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelPlaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelPlaner/Pods-TravelPlaner.release.xcconfig"; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				08F9C3E91F5036AD003B4B2D /* WeatherConditions.swift */,
 				08F9C3EB1F504877003B4B2D /* OpenWeatherMapForecastResponse.swift */,
 				08F9C3ED1F504960003B4B2D /* OWMListObject.swift */,
+				08F9C3EF1F505CC4003B4B2D /* OWMTemp.swift */,
 			);
 			path = OpenWeatherMap;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				08F9C3EA1F5036AD003B4B2D /* WeatherConditions.swift in Sources */,
 				084F974E1F422A95003F418F /* SettingsInterfaces.swift in Sources */,
 				087F80F41F4DCE90009AFD4F /* PlanDateCell.swift in Sources */,
+				08F9C3F01F505CC4003B4B2D /* OWMTemp.swift in Sources */,
 				08A3C68E1F49E3FD0042467C /* BasicPlanInfoItem.swift in Sources */,
 				087F80FA1F4DCF13009AFD4F /* PlanGalleryCell.swift in Sources */,
 				084F97501F422A95003F418F /* SettingsViewController.swift in Sources */,

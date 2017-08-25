@@ -35,7 +35,7 @@ enum Router: URLRequestConvertible {
         case .weatherCurrent:
             return "/weather"
         case .weatherForecast:
-            return "/forecast"
+            return "/forecast/daily"
         case .images:
             return "/search/images"
         }

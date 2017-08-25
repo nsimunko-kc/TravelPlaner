@@ -72,7 +72,7 @@ enum WeatherConditions {
         case WeatherConditions.mist.apiKey:
             return WeatherConditions.mist
         default:
-            return WeatherConditions.mist
+            return nil
         }
     }
     

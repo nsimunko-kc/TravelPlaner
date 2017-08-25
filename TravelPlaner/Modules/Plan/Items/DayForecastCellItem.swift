@@ -6,13 +6,11 @@
 //  Copyright © 2017 Nikola Simunko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct DayForecastCellItem {
-    
-    let name: String
+    let day: String
     let temp: Double
     let weather: String
-    let imagePath: String
-    
+    let image: UIImage
 }
