@@ -9,7 +9,7 @@
 import Unbox
 
 struct OWMWeather {
-    let ID: String
+    let ID: Int
     let main: String
     let description: String
     let icon: String

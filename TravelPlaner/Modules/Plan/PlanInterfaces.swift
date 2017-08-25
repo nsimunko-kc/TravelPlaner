@@ -25,6 +25,8 @@ protocol PlanWireframeInterface: WireframeInterface {
 // MARK: - Plan View Interface -
 
 protocol PlanViewInterface: ViewInterface {
+    func reloadData()
+    func reloadData(at indexPaths: [IndexPath])
 }
 
 // MARK: - Plan Presenter Interface -
@@ -35,6 +37,8 @@ protocol PlanPresenterInterface: PresenterInterface {
     func numberOfItems(in section: Int) -> Int
     func item(for indexPath: IndexPath) -> PlanItem
     func locations() -> [String]
+    func didSetPlanDates(start: Date, end: Date)
+    func didSetPlanLocation(_ location: String)
 }
 
 // MARK: - Plan Interactor Interface -

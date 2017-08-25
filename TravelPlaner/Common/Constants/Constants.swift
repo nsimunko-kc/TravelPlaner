@@ -49,6 +49,10 @@ struct Constants {
             static let SettingsLogoutCell = "LogoutCell"
         }
         
+        struct CollectionViewCells {
+            static let DayForecastCollectionViewCell = "DayForecastCollectionViewCell"
+        }
+        
         struct HeaderViews {
             static let LocationsHeaderView = "LocationsHeaderView"
         }

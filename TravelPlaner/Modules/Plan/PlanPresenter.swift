@@ -15,6 +15,7 @@ enum PlanItem {
     case locationItem(PlanLocationCellItem)
     case forecastItem(PlanForecastCellItem)
     case galleryItem
+    case saveButtonItem
 }
 
 final class PlanPresenter: NSObject {
@@ -27,9 +28,11 @@ final class PlanPresenter: NSObject {
     
     fileprivate var _plan: BasicPlanInfoItem?
     
-    fileprivate var _didSetLocation = false
-    
     fileprivate var _items = [PlanItem]()
+    
+    fileprivate var _startDate: Date?
+    fileprivate var _endDate: Date?
+    fileprivate var _location: String?
     
     // MARK: - Lifecycle -
     
@@ -50,10 +53,26 @@ final class PlanPresenter: NSObject {
             _items.append(PlanItem.locationItem(PlanLocationCellItem(location: plan.location)))
             
             // Fetch weather forecast data from OWM api
+            _items.append(PlanItem.forecastItem(PlanForecastCellItem(forecast: [])))
+            _items.append(PlanItem.galleryItem)
+            _items.append(PlanItem.saveButtonItem)
+            
+            _view?.reloadData()
             
         } else {
             _items.append(PlanItem.dateItem(PlanDateCellItem(startDate: Date(), endDate: Date())))
             _items.append(PlanItem.locationItem(PlanLocationCellItem(location: "")))
+            
+            _startDate = Date()
+            _endDate = Date()
+            _view?.reloadData()
+        }
+    }
+    
+    fileprivate func _checkPlanData() {
+        if let startDate = _startDate, let endDate = _endDate, let location = _location, startDate <= endDate {
+            _plan = BasicPlanInfoItem(location: location, dateFrom: startDate, dateTo: endDate)
+            _loadData()
         }
     }
     
@@ -89,6 +108,17 @@ extension PlanPresenter: PlanPresenterInterface {
     
     func viewDidLoad() {
         _loadData()
+    }
+    
+    func didSetPlanDates(start: Date, end: Date) {
+        _startDate = start
+        _endDate = end
+        _checkPlanData()
+    }
+    
+    func didSetPlanLocation(_ location: String) {
+        _location = location
+        _checkPlanData()
     }
     
 }

@@ -48,6 +48,15 @@ final class PlanViewController: UIViewController {
 // MARK: - Extensions -
 
 extension PlanViewController: PlanViewInterface {
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+    func reloadData(at indexPaths: [IndexPath]) {
+        tableView.reloadRows(at: indexPaths, with: .fade)
+    }
+    
 }
 
 extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
@@ -87,6 +96,10 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanGalleryCell
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanGalleryCell
             return cell
+        case .saveButtonItem:
+            cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanSaveButtonCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanSaveButtonCell
+            return cell
         }
     }
     
@@ -103,9 +116,11 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
         case .locationItem:
             return 95.0
         case .forecastItem:
-            return 121.0
+            return 162.0
         case .galleryItem:
             return 153.0
+        case .saveButtonItem:
+            return 50.0
         }
     }
     
@@ -119,6 +134,7 @@ extension PlanViewController: PlanDateCellDelegate {
     
     func didSet(startDate: Date, endDate: Date) {
         print("Start date: \(startDate) - End date: \(endDate)")
+        presenter.didSetPlanDates(start: startDate, end: endDate)
     }
     
 }
@@ -127,6 +143,7 @@ extension PlanViewController: PlanLocationCellDelegate {
     
     func didSet(location: String) {
         print("Location set: \(location)")
+        presenter.didSetPlanLocation(location)
     }
     
 }
