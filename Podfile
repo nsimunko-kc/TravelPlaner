@@ -8,5 +8,6 @@ target 'TravelPlaner' do
   pod 'UnboxedAlamofire', '~> 2.0'
   pod 'GoogleAPIClientForREST/Calendar', '~> 1.2.1'
   pod 'Google/SignIn', '~> 3.0.3'
+  pod 'SDWebImage', '~> 4.1'
 
 end

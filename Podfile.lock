@@ -68,6 +68,9 @@ PODS:
   - MRProgress/ProgressBaseClass (0.8.3)
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
   - Unbox (2.5.0)
   - UnboxedAlamofire (2.0.3):
     - Alamofire (~> 4.1)
@@ -77,6 +80,7 @@ DEPENDENCIES:
   - Google/SignIn (~> 3.0.3)
   - GoogleAPIClientForREST/Calendar (~> 1.2.1)
   - MRProgress (~> 0.8)
+  - SDWebImage (~> 4.1)
   - UnboxedAlamofire (~> 2.0)
 
 SPEC CHECKSUMS:
@@ -91,9 +95,10 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   Unbox: 30e437e6151a6de16139375fd4e8dd9a664cfbf7
   UnboxedAlamofire: 3ecaf2a745aa018ba3497c0d61487b7338190ac6
 
-PODFILE CHECKSUM: cea75a3c3c2fcde97231bc9bcbb96cacdef3ab5e
+PODFILE CHECKSUM: 8458165b591496037a0d734675e138df5cbd3b2b
 
 COCOAPODS: 1.2.1
