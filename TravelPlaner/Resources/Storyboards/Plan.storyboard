@@ -255,7 +255,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P5g-iG-lbx">
-                                                    <rect key="frame" x="16" y="45" width="343" height="100"/>
+                                                    <rect key="frame" x="0.0" y="45" width="375" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="8eH-s0-FQV"/>
@@ -264,11 +264,11 @@
                                                         <size key="itemSize" width="158" height="100"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="sectionInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryImageCollectionViewCell" id="0Jz-Vh-2Og" customClass="GalleryImageCollectionViewCell" customModule="TravelPlaner" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="158" height="100"/>
+                                                            <rect key="frame" x="16" y="0.0" width="158" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="100"/>
@@ -297,8 +297,8 @@
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="P5g-iG-lbx" secondAttribute="trailing" constant="16" id="A9o-lB-SsO"/>
-                                                <constraint firstItem="P5g-iG-lbx" firstAttribute="leading" secondItem="cbV-UY-930" secondAttribute="leading" constant="16" id="E23-pX-QsF"/>
+                                                <constraint firstAttribute="trailing" secondItem="P5g-iG-lbx" secondAttribute="trailing" id="A9o-lB-SsO"/>
+                                                <constraint firstItem="P5g-iG-lbx" firstAttribute="leading" secondItem="cbV-UY-930" secondAttribute="leading" id="E23-pX-QsF"/>
                                                 <constraint firstItem="P5g-iG-lbx" firstAttribute="top" secondItem="C6K-Qu-tHM" secondAttribute="bottom" constant="8" id="Lf2-ap-CiF"/>
                                                 <constraint firstItem="C6K-Qu-tHM" firstAttribute="leading" secondItem="cbV-UY-930" secondAttribute="leading" constant="16" id="Qge-6C-y8i"/>
                                                 <constraint firstItem="C6K-Qu-tHM" firstAttribute="top" secondItem="cbV-UY-930" secondAttribute="top" constant="16" id="d9a-uR-VNi"/>

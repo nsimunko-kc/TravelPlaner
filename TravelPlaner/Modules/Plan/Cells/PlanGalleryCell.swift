@@ -21,6 +21,7 @@ class PlanGalleryCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        galleryCollectionView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     func configure(with item: PlanGalleryCellItem) {
