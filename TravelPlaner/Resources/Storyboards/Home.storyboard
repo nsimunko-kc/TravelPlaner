@@ -64,9 +64,55 @@
                                     <constraint firstItem="RtL-A5-oHk" firstAttribute="centerX" secondItem="hS5-Lc-xrP" secondAttribute="centerX" id="hlI-tV-9sy"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-zp-Lgx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="71" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-zp-Lgx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="7aC-DM-2mZ">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7aC-DM-2mZ" id="rdW-Cp-n3D">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.12.2012." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKe-bb-JW2">
+                                                    <rect key="frame" x="16" y="8" width="85" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dn2-go-ErB">
+                                                    <rect key="frame" x="117" y="8" width="8" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lokacija" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdt-o4-8lP">
+                                                    <rect key="frame" x="16" y="37" width="62" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.12.2012." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAZ-gj-zHm">
+                                                    <rect key="frame" x="141" y="8" width="85" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EAZ-gj-zHm" firstAttribute="bottom" secondItem="PKe-bb-JW2" secondAttribute="bottom" id="2Zh-vq-4FV"/>
+                                                <constraint firstItem="EAZ-gj-zHm" firstAttribute="leading" secondItem="dn2-go-ErB" secondAttribute="trailing" constant="16" id="FnR-Qy-Xuf"/>
+                                                <constraint firstItem="PKe-bb-JW2" firstAttribute="leading" secondItem="rdW-Cp-n3D" secondAttribute="leading" constant="16" id="UYS-Xm-xWB"/>
+                                                <constraint firstItem="kdt-o4-8lP" firstAttribute="top" secondItem="PKe-bb-JW2" secondAttribute="bottom" constant="8" id="Z4O-mD-Wl2"/>
+                                                <constraint firstItem="kdt-o4-8lP" firstAttribute="leading" secondItem="PKe-bb-JW2" secondAttribute="leading" id="c3n-sw-uxF"/>
+                                                <constraint firstItem="dn2-go-ErB" firstAttribute="leading" secondItem="PKe-bb-JW2" secondAttribute="trailing" constant="16" id="iaw-Re-PsG"/>
+                                                <constraint firstItem="PKe-bb-JW2" firstAttribute="top" secondItem="rdW-Cp-n3D" secondAttribute="top" constant="8" id="j1N-zg-Wit"/>
+                                                <constraint firstItem="dn2-go-ErB" firstAttribute="bottom" secondItem="PKe-bb-JW2" secondAttribute="bottom" id="rVQ-o8-VaL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="eHJ-tz-UTw" id="edb-bH-o0P"/>
                                     <outlet property="delegate" destination="eHJ-tz-UTw" id="2ZD-qS-uaJ"/>
