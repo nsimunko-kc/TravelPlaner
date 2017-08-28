@@ -57,9 +57,9 @@ extension PlanInteractor: PlanInteractorInterface {
         }
     }
     
-    func save(plan: BasicPlanInfoItem) -> Bool {
+    func save(plan: ExtraPlanInfoItem, completion: @escaping (_ result: Bool) -> Void) {
         guard let service = GoogleService.shared.gService else {
-            return false
+            return
         }
         
         let startOfEvent = GTLRCalendar_EventDateTime()
@@ -78,26 +78,42 @@ extension PlanInteractor: PlanInteractorInterface {
         calendarEvent.start = startOfEvent
         calendarEvent.end = endOfEvent
         
-        let query = GTLRCalendarQuery_EventsInsert.query(withObject: calendarEvent, calendarId: "primary")
+        let query: GTLRCalendarQuery
         
-        service.executeQuery(query) { [weak self] (ticket, object, error) in
+        if plan.ID.isEmpty {
+            query = GTLRCalendarQuery_EventsInsert.query(withObject: calendarEvent, calendarId: "primary")
+        } else {
+            query = GTLRCalendarQuery_EventsUpdate.query(withObject: calendarEvent, calendarId: "primary", eventId: plan.ID)
+        }
+        
+//        let query = GTLRCalendarQuery_EventsInsert.query(withObject: calendarEvent, calendarId: "primary")
+        
+        service.executeQuery(query) { (ticket, object, error) in
             if let error = error {
                 print(error.localizedDescription)
+                completion(false)
             } else {
                 var plans: [String]
                 
+                let calEvent = object as! GTLRCalendar_Event
+                
                 if let savedPlanData = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.SavedPlans) as? [String] {
                     plans = savedPlanData
-                    plans.append(plan.encodedPlanData())
+                    
+                    if plan.ID.isEmpty {
+                        plans.append(ExtraPlanInfoItem(ID: calEvent.identifier!, location: plan.location, dateFrom: plan.dateFrom, dateTo: plan.dateTo).encodedPlanData())
+                    } else {
+                        plans[plans.index(where: { ExtraPlanInfoItem.decodePlan($0).ID == plan.ID })!] = ExtraPlanInfoItem(ID: calEvent.identifier!, location: plan.location, dateFrom: plan.dateFrom, dateTo: plan.dateTo).encodedPlanData()
+                    }
                 } else {
-                    plans = [plan.encodedPlanData()]
+                    plans = [ExtraPlanInfoItem(ID: calEvent.identifier!, location: plan.location, dateFrom: plan.dateFrom, dateTo: plan.dateTo).encodedPlanData()]
                 }
                 
                 UserDefaults.standard.setValue(plans, forKey: Constants.UserDefaultsKeys.SavedPlans)
+                
+                completion(true)
             }
         }
-        
-        return true
     }
     
 }

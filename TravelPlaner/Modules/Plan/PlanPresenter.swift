@@ -26,7 +26,7 @@ final class PlanPresenter: NSObject {
     fileprivate var _interactor: PlanInteractorInterface
     fileprivate var _wireframe: PlanWireframeInterface
     
-    fileprivate var _plan: BasicPlanInfoItem?
+    fileprivate var _plan: ExtraPlanInfoItem?
     
     fileprivate var _items = [PlanItem]()
     
@@ -39,7 +39,7 @@ final class PlanPresenter: NSObject {
     
     // MARK: - Lifecycle -
     
-    init (wireframe: PlanWireframeInterface, view: PlanViewInterface, interactor: PlanInteractorInterface, planInfoItem: BasicPlanInfoItem? = nil) {
+    init (wireframe: PlanWireframeInterface, view: PlanViewInterface, interactor: PlanInteractorInterface, planInfoItem: ExtraPlanInfoItem? = nil) {
         _wireframe = wireframe
         _view = view
         _interactor = interactor
@@ -96,7 +96,15 @@ final class PlanPresenter: NSObject {
     
     fileprivate func _checkPlanData() {
         if let startDate = _startDate, let endDate = _endDate, let location = _location, startDate <= endDate {
-            _plan = BasicPlanInfoItem(location: location, dateFrom: startDate, dateTo: endDate)
+            let ID: String
+            
+            if let id = _plan?.ID {
+                ID = id
+            } else {
+                ID = ""
+            }
+            
+            _plan = ExtraPlanInfoItem(ID: ID, location: location, dateFrom: startDate, dateTo: endDate)
             _loadData()
         }
     }
@@ -182,13 +190,12 @@ extension PlanPresenter: PlanPresenterInterface {
         }
         
         _view?.showLoading()
-        let success = _interactor.save(plan: plan)
-        // TODO: Create plan event in GCal
-        _view?.hideLoading()
-        
-        if success {
-            NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.NotificationCenterIdentifiers.DidAddNewPlanNotification), object: nil, userInfo: nil)
-            _wireframe.performNavigationAction(action: .back)
+        _interactor.save(plan: plan) { [weak self] result in
+            self?._view?.hideLoading()
+            if result {
+                NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.NotificationCenterIdentifiers.DidAddNewPlanNotification), object: nil, userInfo: nil)
+                self?._wireframe.performNavigationAction(action: .back)
+            }
         }
     }
     

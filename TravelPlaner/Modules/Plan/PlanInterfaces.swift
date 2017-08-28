@@ -50,5 +50,5 @@ protocol PlanInteractorInterface: InteractorInterface {
     func loadLocations() -> [String]?
     func getForecast(_ location: String, completion: @escaping ((Result<(OpenWeatherMapForecastResponse)>) -> ()))
     func getImages(_ location: String, completion: @escaping ((Result<(GettyImagesGalleryResponse)>) -> ()))
-    func save(plan: BasicPlanInfoItem) -> Bool
+    func save(plan: ExtraPlanInfoItem, completion: @escaping (_ result: Bool) -> Void)
 }

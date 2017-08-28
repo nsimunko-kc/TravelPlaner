@@ -18,7 +18,7 @@ final class HomePresenter: NSObject {
     fileprivate var _interactor: HomeInteractorInterface
     fileprivate var _wireframe: HomeWireframeInterface
     
-    fileprivate var _items = [BasicPlanInfoItem]()
+    fileprivate var _items = [ExtraPlanInfoItem]()
     
     // MARK: - Lifecycle -
     
@@ -70,7 +70,7 @@ extension HomePresenter: HomePresenterInterface {
         return _items.count
     }
     
-    func item(at indexPath: IndexPath) -> BasicPlanInfoItem {
+    func item(at indexPath: IndexPath) -> ExtraPlanInfoItem {
         return _items[indexPath.row]
     }
     

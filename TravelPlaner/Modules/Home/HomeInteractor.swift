@@ -20,20 +20,21 @@ final class HomeInteractor: NSObject {
 
 extension HomeInteractor: HomeInteractorInterface {
     
-    func loadPlans() -> [BasicPlanInfoItem] {
+    func loadPlans() -> [ExtraPlanInfoItem] {
         guard let savedPlanData = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.SavedPlans) as? [String] else {
             return []
         }
         
-        var plans = [BasicPlanInfoItem]()
+        var plans = [ExtraPlanInfoItem]()
         
         for item in savedPlanData {
             let decodedPlan = item.components(separatedBy: "-")
-            let location = decodedPlan[0]
-            let dateFrom = DateFormatter.shared.date(from: decodedPlan[1], withFormat: DateFormat.defaultFormat)!
-            let dateTo = DateFormatter.shared.date(from: decodedPlan[2], withFormat: DateFormat.defaultFormat)!
+            let ID = decodedPlan[0]
+            let location = decodedPlan[1]
+            let dateFrom = DateFormatter.shared.date(from: decodedPlan[2], withFormat: DateFormat.defaultFormat)!
+            let dateTo = DateFormatter.shared.date(from: decodedPlan[3], withFormat: DateFormat.defaultFormat)!
             
-            let plan = BasicPlanInfoItem(location: location, dateFrom: dateFrom, dateTo: dateTo)
+            let plan = ExtraPlanInfoItem(ID: ID, location: location, dateFrom: dateFrom, dateTo: dateTo)
             
             plans.append(plan)
         }
@@ -41,7 +42,7 @@ extension HomeInteractor: HomeInteractorInterface {
         return plans
     }
     
-    func save(plans: [BasicPlanInfoItem]) {
+    func save(plans: [ExtraPlanInfoItem]) {
         var encodedPlans = [String]()
         
         for plan in plans {

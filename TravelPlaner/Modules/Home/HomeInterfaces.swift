@@ -14,7 +14,7 @@ import UIKit
 
 enum HomeNavigationAction {
     case newPlanAction
-    case editPlanAction(BasicPlanInfoItem)
+    case editPlanAction(ExtraPlanInfoItem)
 }
 
 // MARK: - Home Wireframe Interface -
@@ -39,12 +39,12 @@ protocol HomePresenterInterface: PresenterInterface {
     func numberOfRows(in section: Int) -> Int
     func didSelectItem(at indexPath: IndexPath)
     func didDeleteItem(at indexPath: IndexPath)
-    func item(at indexPath: IndexPath) -> BasicPlanInfoItem
+    func item(at indexPath: IndexPath) -> ExtraPlanInfoItem
 }
 
 // MARK: - Home Interactor Interface -
 
 protocol HomeInteractorInterface: InteractorInterface {
-    func loadPlans() -> [BasicPlanInfoItem]
-    func save(plans: [BasicPlanInfoItem])
+    func loadPlans() -> [ExtraPlanInfoItem]
+    func save(plans: [ExtraPlanInfoItem])
 }

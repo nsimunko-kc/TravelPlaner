@@ -11,7 +11,7 @@
 import UIKit
 
 struct PlanContext {
-    let plan: BasicPlanInfoItem
+    let plan: ExtraPlanInfoItem
 }
 
 final class PlanWireframe: NSObject {
@@ -47,7 +47,7 @@ final class PlanWireframe: NSObject {
     }
     
     func configureModuleWithViewController(viewController: PlanViewController) {
-        let plan: BasicPlanInfoItem? = _context?.plan
+        let plan: ExtraPlanInfoItem? = _context?.plan
         let interactor = PlanInteractor()
         let presenter = PlanPresenter(wireframe: self, view: viewController, interactor: interactor, planInfoItem: plan)
         viewController.presenter = presenter
