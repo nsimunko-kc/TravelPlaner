@@ -97,7 +97,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let item = presenter.item(at: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ReuseIdentifiers.TableViewCells.HomePlanTableViewCell, for: indexPath) as! HomePlanTableViewCell
+        cell.configure(with: item)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

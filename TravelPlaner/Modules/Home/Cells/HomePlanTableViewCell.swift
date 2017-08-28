@@ -23,7 +23,7 @@ class HomePlanTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func configure(with item: HomePlanCellItem) {
+    func configure(with item: BasicPlanInfoItem) {
         locationLabel.text = item.location
         dateFromLabel.text = DateFormatter.shared.string(from: item.dateFrom, withFormat: DateFormat.defaultFormat)
         dateToLabel.text = DateFormatter.shared.string(from: item.dateTo, withFormat: DateFormat.defaultFormat)

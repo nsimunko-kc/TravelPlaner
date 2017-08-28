@@ -30,6 +30,14 @@ final class HomePresenter: NSObject {
 
     // MARK: - Private functions -
     
+    fileprivate func _loadData() {
+        _view?.showLoading()
+        _items = _interactor.loadPlans()
+        _items.sort { $0.dateFrom < $1.dateFrom }
+        _view?.reloadData()
+        _view?.hideLoading()
+    }
+    
 }
 
 // MARK: - Extensions -
@@ -49,11 +57,11 @@ extension HomePresenter: HomePresenterInterface {
     }
     
     func numberOfSections() -> Int {
-        return 0
+        return 1
     }
     
     func numberOfRows(in section: Int) -> Int {
-        return 0
+        return _items.count
     }
     
     func item(at indexPath: IndexPath) -> BasicPlanInfoItem {
@@ -65,7 +73,7 @@ extension HomePresenter: HomePresenterInterface {
     }
     
     func viewDidLoad() {
-        
+        _loadData()
     }
     
 }

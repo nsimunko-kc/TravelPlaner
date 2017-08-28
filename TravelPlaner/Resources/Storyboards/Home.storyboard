@@ -65,10 +65,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="71" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-zp-Lgx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="7aC-DM-2mZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomePlanTableViewCell" rowHeight="70" id="7aC-DM-2mZ" customClass="HomePlanTableViewCell" customModule="TravelPlaner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7aC-DM-2mZ" id="rdW-Cp-n3D">
@@ -111,6 +111,11 @@
                                                 <constraint firstItem="dn2-go-ErB" firstAttribute="bottom" secondItem="PKe-bb-JW2" secondAttribute="bottom" id="rVQ-o8-VaL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateFromLabel" destination="PKe-bb-JW2" id="6XP-Ny-1Po"/>
+                                            <outlet property="dateToLabel" destination="EAZ-gj-zHm" id="Pxq-tV-0qm"/>
+                                            <outlet property="locationLabel" destination="kdt-o4-8lP" id="Js0-EN-uD5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -124,7 +129,7 @@
                             <constraint firstItem="EMC-zp-Lgx" firstAttribute="leading" secondItem="NK5-a5-oud" secondAttribute="leading" id="H3W-hP-ysI"/>
                             <constraint firstItem="hS5-Lc-xrP" firstAttribute="top" secondItem="NK5-a5-oud" secondAttribute="top" id="OSv-xn-2JG"/>
                             <constraint firstAttribute="bottom" secondItem="EMC-zp-Lgx" secondAttribute="bottom" id="OqK-pF-jEd"/>
-                            <constraint firstItem="EMC-zp-Lgx" firstAttribute="top" secondItem="NK5-a5-oud" secondAttribute="top" id="gGR-EL-Zu3"/>
+                            <constraint firstItem="EMC-zp-Lgx" firstAttribute="top" secondItem="NK5-a5-oud" secondAttribute="top" constant="64" id="Y3I-g4-acH"/>
                             <constraint firstItem="hS5-Lc-xrP" firstAttribute="leading" secondItem="NK5-a5-oud" secondAttribute="leading" id="hiJ-9S-5u6"/>
                             <constraint firstAttribute="bottom" secondItem="hS5-Lc-xrP" secondAttribute="bottom" id="iAG-6z-rgR"/>
                             <constraint firstAttribute="trailing" secondItem="EMC-zp-Lgx" secondAttribute="trailing" id="oky-QM-8Bo"/>

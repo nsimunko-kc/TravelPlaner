@@ -26,7 +26,7 @@ protocol HomeWireframeInterface: WireframeInterface {
 
 // MARK: - Home View Interface -
 
-protocol HomeViewInterface: ViewInterface {
+protocol HomeViewInterface: ViewInterface, Progressable {
     func reloadData()
 }
 
@@ -45,5 +45,5 @@ protocol HomePresenterInterface: PresenterInterface {
 // MARK: - Home Interactor Interface -
 
 protocol HomeInteractorInterface: InteractorInterface {
-    
+    func loadPlans() -> [BasicPlanInfoItem]
 }

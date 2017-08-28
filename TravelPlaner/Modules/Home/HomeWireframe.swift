@@ -66,7 +66,7 @@ extension HomeWireframe: HomeWireframeInterface {
             let viewController = wireframe.instantiateAndConfigureModule()
             navigationController?.pushViewController(viewController, animated: true)
         case .editPlanAction(let plan):
-            let wireframe = PlanWireframe(navigationController: navigationController)
+            let wireframe = PlanWireframe(navigationController: navigationController, context: PlanContext(plan: plan))
             let viewController = wireframe.instantiateAndConfigureModule()
             navigationController?.pushViewController(viewController, animated: true)
         }

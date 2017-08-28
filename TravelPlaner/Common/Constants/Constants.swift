@@ -48,6 +48,7 @@ struct Constants {
             static let SettingsInfoCell = "SettingsInfoCell"
             static let SettingsActionCell = "SettingsActionCell"
             static let SettingsLogoutCell = "LogoutCell"
+            static let HomePlanTableViewCell = "HomePlanTableViewCell"
         }
         
         struct CollectionViewCells {

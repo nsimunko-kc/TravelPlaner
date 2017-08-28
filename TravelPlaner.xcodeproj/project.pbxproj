@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0806B98F1F53780E00617CA0 /* HomePlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806B98E1F53780E00617CA0 /* HomePlanTableViewCell.swift */; };
-		0806B9911F53783100617CA0 /* HomePlanCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806B9901F53783100617CA0 /* HomePlanCellItem.swift */; };
 		080E95781F4C252700D1BA3C /* LocationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E95731F4C252700D1BA3C /* LocationsInteractor.swift */; };
 		080E95791F4C252700D1BA3C /* LocationsInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E95741F4C252700D1BA3C /* LocationsInterfaces.swift */; };
 		080E957A1F4C252700D1BA3C /* LocationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E95751F4C252700D1BA3C /* LocationsPresenter.swift */; };
@@ -98,7 +97,6 @@
 
 /* Begin PBXFileReference section */
 		0806B98E1F53780E00617CA0 /* HomePlanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePlanTableViewCell.swift; sourceTree = "<group>"; };
-		0806B9901F53783100617CA0 /* HomePlanCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePlanCellItem.swift; sourceTree = "<group>"; };
 		080E95731F4C252700D1BA3C /* LocationsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsInteractor.swift; sourceTree = "<group>"; };
 		080E95741F4C252700D1BA3C /* LocationsInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsInterfaces.swift; sourceTree = "<group>"; };
 		080E95751F4C252700D1BA3C /* LocationsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsPresenter.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 		0806B98D1F5377EF00617CA0 /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				0806B9901F53783100617CA0 /* HomePlanCellItem.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -710,7 +707,6 @@
 				08BB13A11F45E1990041CCAC /* LoginViewController.swift in Sources */,
 				08F9C3F21F506B3D003B4B2D /* GettyImagesGalleryResponse.swift in Sources */,
 				08BB13951F4383C10041CCAC /* OWMMain.swift in Sources */,
-				0806B9911F53783100617CA0 /* HomePlanCellItem.swift in Sources */,
 				08BB139F1F45E1990041CCAC /* LoginInterfaces.swift in Sources */,
 				080E957B1F4C252700D1BA3C /* LocationsViewController.swift in Sources */,
 				084F97511F422A95003F418F /* SettingsWireframe.swift in Sources */,
