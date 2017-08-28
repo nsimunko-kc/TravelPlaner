@@ -61,8 +61,8 @@ extension PlanWireframe: PlanWireframeInterface {
     
     func performNavigationAction(action: PlanNavigationAction) {
         switch action {
-        default:
-            break
+        case .back:
+            popViewController(animated: true)
         }
     }
 

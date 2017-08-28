@@ -62,11 +62,11 @@ extension HomeWireframe: HomeWireframeInterface {
     func performNavigationAction(action: HomeNavigationAction) {
         switch action {
         case .newPlanAction:
-            let wireframe = PlanWireframe()
+            let wireframe = PlanWireframe(navigationController: navigationController)
             let viewController = wireframe.instantiateAndConfigureModule()
             navigationController?.pushViewController(viewController, animated: true)
         case .editPlanAction(let plan):
-            let wireframe = PlanWireframe()
+            let wireframe = PlanWireframe(navigationController: navigationController)
             let viewController = wireframe.instantiateAndConfigureModule()
             navigationController?.pushViewController(viewController, animated: true)
         }

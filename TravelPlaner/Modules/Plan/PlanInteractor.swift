@@ -53,4 +53,19 @@ extension PlanInteractor: PlanInteractorInterface {
         }
     }
     
+    func save(plan: BasicPlanInfoItem) -> Bool {
+        var plans: [String]
+        
+        if let savedPlanData = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.SavedPlans) as? [String] {
+            plans = savedPlanData
+            plans.append(plan.encodedPlanData())
+        } else {
+            plans = [plan.encodedPlanData()]
+        }
+        
+        UserDefaults.standard.setValue(plans, forKey: Constants.UserDefaultsKeys.SavedPlans)
+        
+        return true
+    }
+    
 }

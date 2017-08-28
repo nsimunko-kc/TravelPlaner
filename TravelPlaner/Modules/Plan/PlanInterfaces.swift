@@ -14,6 +14,7 @@ import Alamofire
 // MARK: - Navigation -
 
 enum PlanNavigationAction {
+    case back
 }
 
 // MARK: - Plan Wireframe Interface -
@@ -40,6 +41,7 @@ protocol PlanPresenterInterface: PresenterInterface {
     func locations() -> [String]
     func didSetPlanDates(start: Date, end: Date)
     func didSetPlanLocation(_ location: String)
+    func didTapSavePlanButton()
 }
 
 // MARK: - Plan Interactor Interface -
@@ -48,4 +50,5 @@ protocol PlanInteractorInterface: InteractorInterface {
     func loadLocations() -> [String]?
     func getForecast(_ location: String, completion: @escaping ((Result<(OpenWeatherMapForecastResponse)>) -> ()))
     func getImages(_ location: String, completion: @escaping ((Result<(GettyImagesGalleryResponse)>) -> ()))
+    func save(plan: BasicPlanInfoItem) -> Bool
 }

@@ -100,6 +100,7 @@ extension PlanViewController: UITableViewDelegate, UITableViewDataSource {
         case .saveButtonItem:
             cellIdentifier = Constants.ReuseIdentifiers.TableViewCells.PlanSaveButtonCell
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PlanSaveButtonCell
+            cell.delegate = self
             return cell
         }
     }
@@ -145,6 +146,14 @@ extension PlanViewController: PlanLocationCellDelegate {
     func didSet(location: String) {
         print("Location set: \(location)")
         presenter.didSetPlanLocation(location)
+    }
+    
+}
+
+extension PlanViewController: PlanSaveButtonCellDelegate {
+    
+    func didTapSaveButton() {
+        presenter.didTapSavePlanButton()
     }
     
 }

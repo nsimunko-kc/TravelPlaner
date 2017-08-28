@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol PlanSaveButtonCellDelegate {
+    func didTapSaveButton()
+}
+
 class PlanSaveButtonCell: UITableViewCell {
 
     @IBOutlet weak var saveButton: UIButton!
+    
+    var delegate: PlanSaveButtonCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +28,7 @@ class PlanSaveButtonCell: UITableViewCell {
     }
     
     @IBAction func didTapSaveButton(_ sender: UIButton) {
-        
+        delegate?.didTapSaveButton()
     }
 
 }

@@ -176,4 +176,18 @@ extension PlanPresenter: PlanPresenterInterface {
         _checkPlanData()
     }
     
+    func didTapSavePlanButton() {
+        guard let plan = _plan else {
+            return
+        }
+        
+        _view?.showLoading()
+        let success = _interactor.save(plan: plan)
+        _view?.hideLoading()
+        
+        if success {
+            _wireframe.performNavigationAction(action: .back)
+        }
+    }
+    
 }
