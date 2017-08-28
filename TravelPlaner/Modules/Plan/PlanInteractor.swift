@@ -10,6 +10,10 @@
 
 import Alamofire
 import UnboxedAlamofire
+import Google
+import GTMOAuth2
+import GoogleSignIn
+import GoogleAPIClientForREST
 
 final class PlanInteractor: NSObject {
 
@@ -54,16 +58,44 @@ extension PlanInteractor: PlanInteractorInterface {
     }
     
     func save(plan: BasicPlanInfoItem) -> Bool {
-        var plans: [String]
-        
-        if let savedPlanData = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.SavedPlans) as? [String] {
-            plans = savedPlanData
-            plans.append(plan.encodedPlanData())
-        } else {
-            plans = [plan.encodedPlanData()]
+        guard let service = GoogleService.shared.gService else {
+            return false
         }
         
-        UserDefaults.standard.setValue(plans, forKey: Constants.UserDefaultsKeys.SavedPlans)
+        let startOfEvent = GTLRCalendar_EventDateTime()
+        let endOfEvent = GTLRCalendar_EventDateTime()
+        let calendarEvent = GTLRCalendar_Event()
+        
+        startOfEvent.dateTime = GTLRDateTime(date: plan.dateFrom)
+        endOfEvent.dateTime = GTLRDateTime(date: plan.dateTo)
+        
+        startOfEvent.timeZone = "Etc/GMT+0"
+        endOfEvent.timeZone = "Etc/GMT+0"
+        
+        calendarEvent.summary = "Plan putovanja za \(plan.location)"
+        calendarEvent.location = plan.location
+        calendarEvent.descriptionProperty = plan.location
+        calendarEvent.start = startOfEvent
+        calendarEvent.end = endOfEvent
+        
+        let query = GTLRCalendarQuery_EventsInsert.query(withObject: calendarEvent, calendarId: "primary")
+        
+        service.executeQuery(query) { [weak self] (ticket, object, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                var plans: [String]
+                
+                if let savedPlanData = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.SavedPlans) as? [String] {
+                    plans = savedPlanData
+                    plans.append(plan.encodedPlanData())
+                } else {
+                    plans = [plan.encodedPlanData()]
+                }
+                
+                UserDefaults.standard.setValue(plans, forKey: Constants.UserDefaultsKeys.SavedPlans)
+            }
+        }
         
         return true
     }

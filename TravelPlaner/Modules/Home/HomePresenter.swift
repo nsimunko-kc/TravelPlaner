@@ -81,6 +81,8 @@ extension HomePresenter: HomePresenterInterface {
     func didDeleteItem(at indexPath: IndexPath) {
         _items.remove(at: indexPath.row)
         _interactor.save(plans: _items)
+        
+        // TODO: Remove plan event form GCalendar
     }
     
     func viewDidLoad() {

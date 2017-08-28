@@ -183,6 +183,7 @@ extension PlanPresenter: PlanPresenterInterface {
         
         _view?.showLoading()
         let success = _interactor.save(plan: plan)
+        // TODO: Create plan event in GCal
         _view?.hideLoading()
         
         if success {

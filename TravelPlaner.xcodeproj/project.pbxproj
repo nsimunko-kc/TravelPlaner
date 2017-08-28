@@ -56,6 +56,7 @@
 		087F80F81F4DCEE8009AFD4F /* PlanForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F71F4DCEE8009AFD4F /* PlanForecastCell.swift */; };
 		087F80FA1F4DCF13009AFD4F /* PlanGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80F91F4DCF13009AFD4F /* PlanGalleryCell.swift */; };
 		087F80FC1F4DCF46009AFD4F /* PlanSaveButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F80FB1F4DCF46009AFD4F /* PlanSaveButtonCell.swift */; };
+		089FA82D1F5454750060C3B9 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089FA82C1F5454750060C3B9 /* GoogleService.swift */; };
 		08A3C68A1F49BF910042467C /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A3C6891F49BF910042467C /* Plan.storyboard */; };
 		08A3C68E1F49E3FD0042467C /* BasicPlanInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A3C68D1F49E3FD0042467C /* BasicPlanInfoItem.swift */; };
 		08BB138F1F4382F20041CCAC /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB138E1F4382F20041CCAC /* GettyImage.swift */; };
@@ -146,6 +147,7 @@
 		087F80F71F4DCEE8009AFD4F /* PlanForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanForecastCell.swift; sourceTree = "<group>"; };
 		087F80F91F4DCF13009AFD4F /* PlanGalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanGalleryCell.swift; sourceTree = "<group>"; };
 		087F80FB1F4DCF46009AFD4F /* PlanSaveButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanSaveButtonCell.swift; sourceTree = "<group>"; };
+		089FA82C1F5454750060C3B9 /* GoogleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		08A3C6891F49BF910042467C /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		08A3C68D1F49E3FD0042467C /* BasicPlanInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPlanInfoItem.swift; sourceTree = "<group>"; };
 		08BB138E1F4382F20041CCAC /* GettyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImage.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				08F75DE21F3E34A20082E665 /* AppDelegate.swift */,
+				089FA82C1F5454750060C3B9 /* GoogleService.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 				08F75E0A1F3E39C90082E665 /* Constants.swift in Sources */,
 				08F75E081F3E399E0082E665 /* Router.swift in Sources */,
 				08524A931F4C69C000FE294D /* SettingsInfoCell.swift in Sources */,
+				089FA82D1F5454750060C3B9 /* GoogleService.swift in Sources */,
 				084F97611F422B0C003F418F /* HomeInteractor.swift in Sources */,
 				08F9C3F61F507036003B4B2D /* PlanGalleryCellItem.swift in Sources */,
 				08BB13A01F45E1990041CCAC /* LoginPresenter.swift in Sources */,

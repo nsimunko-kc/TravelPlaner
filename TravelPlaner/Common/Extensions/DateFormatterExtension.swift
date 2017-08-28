@@ -10,6 +10,7 @@ import Foundation
 
 enum DateFormat: String {
     case defaultFormat = "d.M.yyyy"
+    case apiFormat = "yyyy-mm-dd"
 }
 
 class DateFormatter: Foundation.DateFormatter {

@@ -32,10 +32,6 @@ final class PlanViewController: UIViewController {
     }
 
     // MARK: - IBActions -
-    
-    @IBAction func didTapSavePlanButton(_ sender: UIButton) {
-        
-    }
 
     // MARK: - Private functions -
     

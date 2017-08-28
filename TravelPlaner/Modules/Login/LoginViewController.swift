@@ -9,6 +9,8 @@
 //
 
 import UIKit
+import Google
+import GTMOAuth2
 import GoogleSignIn
 import GoogleAPIClientForREST
 
@@ -34,6 +36,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Configure Google Sign-in.
+        GIDSignIn.sharedInstance().clientID = "41958465849-c7lkntnc6g5888nbvs5csjr1rvreetn1.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = _scopes
@@ -58,8 +61,12 @@ extension LoginViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             self._service.authorizer = nil
+            GoogleService.shared.gService = nil
             presenter.didFailToSignIn(withError: error)
         } else {
+            _service.authorizer = user.authentication.fetcherAuthorizer()
+            _service.apiKey = "AIzaSyBDiIW_pV4mPI9JxiSeK3LWgyYODOqlL9k"
+            GoogleService.shared.gService = _service
             presenter.didSignIn()
         }
     }
