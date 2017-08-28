@@ -86,8 +86,6 @@ extension PlanInteractor: PlanInteractorInterface {
             query = GTLRCalendarQuery_EventsUpdate.query(withObject: calendarEvent, calendarId: "primary", eventId: plan.ID)
         }
         
-//        let query = GTLRCalendarQuery_EventsInsert.query(withObject: calendarEvent, calendarId: "primary")
-        
         service.executeQuery(query) { (ticket, object, error) in
             if let error = error {
                 print(error.localizedDescription)

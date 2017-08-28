@@ -44,7 +44,7 @@ final class HomeViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.appLightBlue()
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        if presenter.numberOfSections() > 0 {
+        if presenter.numberOfRows(in: 0) > 0 {
             tableView.isHidden = false
             placeholderView.isHidden = true
         } else {
@@ -68,6 +68,16 @@ extension HomeViewController: HomeViewInterface {
     
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    func hideTableView(isHidden: Bool) {
+        if isHidden {
+            tableView.isHidden = true
+            placeholderView.isHidden = false
+        } else {
+            tableView.isHidden = false
+            placeholderView.isHidden = true
+        }
     }
     
 }
@@ -120,7 +130,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             presenter.didDeleteItem(at: indexPath)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     

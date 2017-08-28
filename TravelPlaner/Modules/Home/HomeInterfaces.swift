@@ -28,6 +28,7 @@ protocol HomeWireframeInterface: WireframeInterface {
 
 protocol HomeViewInterface: ViewInterface, Progressable {
     func reloadData()
+    func hideTableView(isHidden: Bool)
 }
 
 // MARK: - Home Presenter Interface -
@@ -47,4 +48,5 @@ protocol HomePresenterInterface: PresenterInterface {
 protocol HomeInteractorInterface: InteractorInterface {
     func loadPlans() -> [ExtraPlanInfoItem]
     func save(plans: [ExtraPlanInfoItem])
+    func delete(plan: ExtraPlanInfoItem, completion: @escaping (_ result: Bool) -> Void)
 }

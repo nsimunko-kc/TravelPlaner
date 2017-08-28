@@ -37,6 +37,7 @@ final class HomePresenter: NSObject {
         _items = _interactor.loadPlans()
         _items.sort { $0.dateFrom < $1.dateFrom }
         _view?.reloadData()
+        _view?.hideTableView(isHidden: _items.isEmpty)
         _view?.hideLoading()
     }
     
@@ -79,10 +80,15 @@ extension HomePresenter: HomePresenterInterface {
     }
     
     func didDeleteItem(at indexPath: IndexPath) {
-        _items.remove(at: indexPath.row)
-        _interactor.save(plans: _items)
-        
-        // TODO: Remove plan event form GCalendar
+        _view?.showLoading()
+        _interactor.delete(plan: _items[indexPath.row], completion: { [weak self] (success) in
+            if success {
+                self?._items.remove(at: indexPath.row)
+            }
+            self?._view?.reloadData()
+            self?._view?.hideTableView(isHidden: (self?._items.isEmpty)!)
+            self?._view?.hideLoading()
+        })
     }
     
     func viewDidLoad() {

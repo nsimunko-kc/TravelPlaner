@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import GoogleAPIClientForREST
 
 final class HomeInteractor: NSObject {
 
@@ -50,6 +51,26 @@ extension HomeInteractor: HomeInteractorInterface {
         }
         
         UserDefaults.standard.set(encodedPlans, forKey: Constants.UserDefaultsKeys.SavedPlans)
+    }
+    
+    func delete(plan: ExtraPlanInfoItem, completion: @escaping (Bool) -> Void) {
+        guard let service = GoogleService.shared.gService, !plan.ID.isEmpty else {
+            return
+        }
+        
+        let query = GTLRCalendarQuery_EventsDelete.query(withCalendarId: "primary", eventId: plan.ID)
+        
+        service.executeQuery(query) { [weak self] (ticket, object, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(false)
+            } else {
+                var plans = (self?.loadPlans())!
+                plans = plans.filter({ $0.ID != plan.ID })
+                self?.save(plans: plans)
+                completion(true)
+            }
+        }
     }
     
 }

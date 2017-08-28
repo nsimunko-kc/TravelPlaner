@@ -44,6 +44,12 @@ final class PlanPresenter: NSObject {
         _view = view
         _interactor = interactor
         _plan = planInfoItem
+        
+        if let plan = planInfoItem {
+            _startDate = plan.dateFrom
+            _endDate = plan.dateTo
+            _location = plan.location
+        }
     }
 
     // MARK: - Private functions -
