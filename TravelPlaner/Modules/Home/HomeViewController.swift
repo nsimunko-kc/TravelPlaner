@@ -67,7 +67,7 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewInterface {
     
     func reloadData() {
-        
+        tableView.reloadData()
     }
     
 }

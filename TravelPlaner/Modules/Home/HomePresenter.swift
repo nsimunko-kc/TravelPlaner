@@ -26,6 +26,8 @@ final class HomePresenter: NSObject {
         _wireframe = wireframe
         _view = view
         _interactor = interactor
+        super.init()
+        _configureNotifications()
     }
 
     // MARK: - Private functions -
@@ -36,6 +38,14 @@ final class HomePresenter: NSObject {
         _items.sort { $0.dateFrom < $1.dateFrom }
         _view?.reloadData()
         _view?.hideLoading()
+    }
+    
+    fileprivate func _configureNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(_handleNotifications(_:)), name: NSNotification.Name(rawValue: Constants.NotificationCenterIdentifiers.DidAddNewPlanNotification), object: nil)
+    }
+    
+    @objc fileprivate func _handleNotifications(_ notification: Notification) {
+        _loadData()
     }
     
 }

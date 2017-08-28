@@ -61,4 +61,8 @@ struct Constants {
         }
     }
     
+    struct NotificationCenterIdentifiers {
+        static let DidAddNewPlanNotification = "DidAddNewPlanNotification"
+    }
+    
 }

@@ -186,6 +186,7 @@ extension PlanPresenter: PlanPresenterInterface {
         _view?.hideLoading()
         
         if success {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.NotificationCenterIdentifiers.DidAddNewPlanNotification), object: nil, userInfo: nil)
             _wireframe.performNavigationAction(action: .back)
         }
     }
