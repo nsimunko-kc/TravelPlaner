@@ -62,10 +62,6 @@ extension HomePresenter: HomePresenterInterface {
         _wireframe.performNavigationAction(action: .newPlanAction)
     }
     
-    func didSelectEditPlanAction(at indexPath: IndexPath) {
-        _wireframe.performNavigationAction(action: .editPlanAction(_items[indexPath.row]))
-    }
-    
     func numberOfSections() -> Int {
         return 1
     }
@@ -79,7 +75,12 @@ extension HomePresenter: HomePresenterInterface {
     }
     
     func didSelectItem(at indexPath: IndexPath) {
-        
+        _wireframe.performNavigationAction(action: .editPlanAction(_items[indexPath.row]))
+    }
+    
+    func didDeleteItem(at indexPath: IndexPath) {
+        _items.remove(at: indexPath.row)
+        _interactor.save(plans: _items)
     }
     
     func viewDidLoad() {

@@ -35,10 +35,10 @@ protocol HomeViewInterface: ViewInterface, Progressable {
 protocol HomePresenterInterface: PresenterInterface {
     func didSelectNavigationAction(action: HomeNavigationAction)
     func didSelectNewPlanAction()
-    func didSelectEditPlanAction(at indexPath: IndexPath)
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
     func didSelectItem(at indexPath: IndexPath)
+    func didDeleteItem(at indexPath: IndexPath)
     func item(at indexPath: IndexPath) -> BasicPlanInfoItem
 }
 
@@ -46,4 +46,5 @@ protocol HomePresenterInterface: PresenterInterface {
 
 protocol HomeInteractorInterface: InteractorInterface {
     func loadPlans() -> [BasicPlanInfoItem]
+    func save(plans: [BasicPlanInfoItem])
 }

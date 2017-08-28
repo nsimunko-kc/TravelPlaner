@@ -41,4 +41,14 @@ extension HomeInteractor: HomeInteractorInterface {
         return plans
     }
     
+    func save(plans: [BasicPlanInfoItem]) {
+        var encodedPlans = [String]()
+        
+        for plan in plans {
+            encodedPlans.append(plan.encodedPlanData())
+        }
+        
+        UserDefaults.standard.set(encodedPlans, forKey: Constants.UserDefaultsKeys.SavedPlans)
+    }
+    
 }
